@@ -1,0 +1,173 @@
+.container {
+  display: flex;
+
+  flex-direction: column;
+
+  height: 100vh;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  margin-left: 10px;
+
+  padding: 5px 10px;
+
+  border: none;
+
+  background-color: #007bff;
+
+  color: white;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+
+  flex: 1;
+
+  padding: 10px;
+}
+
+.left-panel {
+  width: 50%;
+
+  margin-right: 20px;
+}
+
+.right-panel {
+  width: 50%;
+}
+
+.title {
+  font-size: 20px;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+}
+
+.selection {
+  display: flex;
+
+  margin-bottom: 10px;
+}
+
+.selection button {
+  margin-right: 10px;
+
+  padding: 5px 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.list-container {
+  border: 1px solid #ccc;
+
+  padding: 10px;
+}
+
+.list-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.list-options {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.list-options label {
+  margin-right: 5px;
+}
+
+.list {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.list th,
+.list td {
+  padding: 8px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.list th {
+  background-color: #f2f2f2;
+
+  font-weight: bold;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.options {
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 10px;
+}
+
+.options label {
+  margin-right: 5px;
+}
+
+.table-container {
+  border: 1px solid #ccc;
+
+  padding: 10px;
+}
+
+.table-title {
+  margin-bottom: 10px;
+}
+
+.table {
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 8px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #f2f2f2;
+
+  font-weight: bold;
+}
+
+.footer {
+  padding: 10px;
+
+  background-color: #005cb9;
+
+  color: white;
+}
