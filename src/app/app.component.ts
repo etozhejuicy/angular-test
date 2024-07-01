@@ -133,23 +133,49 @@ export class AppComponent {
 
   // Substations
 
-  substations: any = ['ТЭЦ ПГУ ГСР Энерго'];
+  substations: any = [
+    { name: '', value: 'Выберите подстанцию' },
+    { name: 'ss1', value: 'ТЭЦ ПГУ ГСР Энерго' },
+    { name: 'ss2', value: 'Подстанция 2' },
+    { name: 'ss3', value: 'Подстанция 3' },
+    { name: 'ss4', value: 'Подстанция 4' },
+    { name: 'ss5', value: 'Подстанция 5' },
+  ];
+
+  // equipment
+
+  equipment: any = [
+    { name: '', value: 'Выберите оборудование' },
+    { name: 'tr1', value: 'Трансформатор 1' },
+    { name: 'tr2', value: 'Трансформатор 2' },
+    { name: 'tr3', value: 'Трансформатор 3' },
+    { name: 'tr4', value: 'Трансформатор 4' },
+    { name: 'tr5', value: 'Трансформатор 5' },
+  ]
 
   // Equipment Types
 
-  equipmentTypes: any = ['Трансформаторы'];
+  equipmentTypes: any = [
+    { name: '', value: 'Выберите тип' },
+    { name: 'transformator', value: 'Трансформаторы' },
+    { name: 'generator', value: 'Генераторы' },
+  ];
 
   // RU Values
 
-  ruValues: any = ['110'];
+  ruValues: any = [
+    { name: '', value: 'Выберите РУ' },
+    { name: 'RU1', value: 'РУ 1' },
+    { name: 'RU2', value: 'РУ 2' },
+  ];
 
   // Variables
 
-  selectedSubstation: string = '';
+  selectedSubstation: string = 'ss1';
 
-  selectedEquipmentType: string = '';
+  selectedEquipmentType: string = 'transformator';
 
-  selectedRU: string = '';
+  selectedRU: string = 'RU1';
 
   // Check if a measurement is checked
 

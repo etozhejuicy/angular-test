@@ -3,28 +3,42 @@
 
   <div class="content">
     <div class="left-panel">
-      <div class="title">= Подстанции > ТЭЦ ПГУ ГСР Энерго</div>
+      <div class="left-panel-header">
+        <div class="left-panel-action">
+          <button class="button" for="substations">Подстанции</button>
+          <span>→</span>
+          <span *ngFor="let item of substations">{{ item.value }}</span>
+        </div>
+      </div>
 
       <div class="selection">
-        <button>Подстанция</button>
+        <label for="substations">Подстанция</label>
+        <select id="substations">
+          <option value="{{ item.name }}" *ngFor="let item of substations">{{ item.value }}</option>
+        </select>
 
-        <button>Оборудование</button>
+        <label for="equipment">Оборудование</label>
+        <select id="equipment">
+          <option value="{{ item.name }}" *ngFor="let item of equipment">{{ item.value }}</option>
+        </select>
       </div>
 
       <div class="list-container">
-        <div class="list-title">Список Ведомость</div>
+        <div class="list-title">
+          <button>Список</button>
+          <button>Ведомость</button>
+        </div>
 
         <div class="list-options">
-          <label for="type">Тип</label>
+          <label for="equipmentTypes">Тип</label>
 
-          <select id="type">
-            <option value="трансформаторы">Трансформаторы</option>
+          <select id="equipmentTypes">
+            <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">{{ item.value }}</option>
           </select>
 
-          <label for="ru">РУ</label>
-
-          <select id="ru">
-            <option value="110">110</option>
+          <label for="ruValues">РУ</label>
+          <select id="ruValues">
+            <option value="{{ item.name }}" *ngFor="let item of ruValues">{{ item.value }}</option>
           </select>
         </div>
 
@@ -49,16 +63,16 @@
     </div>
 
     <div class="right-panel">
+      <img src="document.png" alt="Document" height="30">
       <div class="title">PTCH\HH-2</div>
 
       <div class="buttons">
-        <button>Проверить</button>
-
-        <button>Отменить проверку</button>
-
-        <button>Редактировать</button>
-
-        <button>Удалить</button>
+        <button class="button">Проверить</button>
+        <button class="button">Отменить проверку</button>
+        <button class="button">Редактировать</button>
+        <button class="button">Удалить</button>
+        <button class="button">目</button>
+        <button class="button">目</button>
       </div>
 
       <div class="message">Нет проверенных замеров</div>
@@ -75,9 +89,7 @@
 
       <div class="table-container">
         <div class="table-title">+ Добавить новые замеры</div>
-        <app-measurement-form
-          (newMeasurement)="addNewMeasurement($event)"
-        ></app-measurement-form>
+        <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
 
         <table class="table">
           <thead>
@@ -90,11 +102,7 @@
           <tbody>
             <tr *ngFor="let item of tableData">
               <td>
-                <input
-                  type="checkbox"
-                  [checked]="isChecked(item)"
-                  (click)="toggleCheck(item)"
-                />
+                <input type="checkbox" [checked]="isChecked(item)" (click)="toggleCheck(item)" />
               </td>
               <td>{{ item.date }}</td>
 
