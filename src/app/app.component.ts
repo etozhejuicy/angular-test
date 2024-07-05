@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
-import { NgFor } from '@angular/common';
+import { ButtonComponent } from './button/button.component';
 
 @Component({
   standalone: true,
 
-  imports: [NgFor, HeaderComponent, MeasurementFormComponent],
+  imports: [NgFor, ButtonComponent, HeaderComponent, MeasurementFormComponent],
 
   selector: 'app-root',
 
   templateUrl: './app.component.html',
 
-  styleUrls: ['./app.component.css', './header/header.component.css'],
+  styleUrls: [
+    './app.component.scss',
+    './header/header.component.scss',
+    './button/button.component.scss',
+  ],
 })
 export class AppComponent {
   title = 'monitor-app';
@@ -151,7 +156,7 @@ export class AppComponent {
     { name: 'tr3', value: 'Трансформатор 3' },
     { name: 'tr4', value: 'Трансформатор 4' },
     { name: 'tr5', value: 'Трансформатор 5' },
-  ]
+  ];
 
   // Equipment Types
 
@@ -191,5 +196,16 @@ export class AppComponent {
 
   addNewMeasurement(measurement: any) {
     this.tableData.unshift(measurement);
+  }
+
+  // ButtonComponent
+  isDisabled = false;
+
+  onDisabledChange(disabled: boolean) {
+    console.log(`Disabled state changed to: ${disabled}`);
+
+    this.isDisabled = disabled;
+
+    // Update your app's state accordingly
   }
 }

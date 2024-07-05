@@ -1,4 +1,4 @@
-<div class="container">
+<div class="app-container">
   <app-header class="header"></app-header>
 
   <div class="content">
@@ -14,12 +14,16 @@
       <div class="selection">
         <label for="substations">Подстанция</label>
         <select id="substations">
-          <option value="{{ item.name }}" *ngFor="let item of substations">{{ item.value }}</option>
+          <option value="{{ item.name }}" *ngFor="let item of substations">
+            {{ item.value }}
+          </option>
         </select>
 
         <label for="equipment">Оборудование</label>
         <select id="equipment">
-          <option value="{{ item.name }}" *ngFor="let item of equipment">{{ item.value }}</option>
+          <option value="{{ item.name }}" *ngFor="let item of equipment">
+            {{ item.value }}
+          </option>
         </select>
       </div>
 
@@ -33,12 +37,16 @@
           <label for="equipmentTypes">Тип</label>
 
           <select id="equipmentTypes">
-            <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">{{ item.value }}</option>
+            <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">
+              {{ item.value }}
+            </option>
           </select>
 
           <label for="ruValues">РУ</label>
           <select id="ruValues">
-            <option value="{{ item.name }}" *ngFor="let item of ruValues">{{ item.value }}</option>
+            <option value="{{ item.name }}" *ngFor="let item of ruValues">
+              {{ item.value }}
+            </option>
           </select>
         </div>
 
@@ -63,16 +71,38 @@
     </div>
 
     <div class="right-panel">
-      <img src="document.png" alt="Document" height="30">
+      <img src="document.png" alt="Document" height="30" />
       <div class="title">PTCH\HH-2</div>
-
-      <div class="buttons">
-        <button class="button">Проверить</button>
-        <button class="button">Отменить проверку</button>
-        <button class="button">Редактировать</button>
-        <button class="button">Удалить</button>
-        <button class="button">目</button>
-        <button class="button">目</button>
+      <app-button
+        [label]="'Click me!'"
+        [classes]="'btn btn-primary btn-colored btn-dimmed'"
+        [disabled]="isDisabled"
+        (disabledChange)="onDisabledChange($event)"
+      >
+      </app-button>
+      <div class="row g-3">
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">Проверить</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">
+            Отменить проверку
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">
+            Редактировать
+          </button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">Удалить</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">目</button>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-icon btn-outline-primary">目</button>
+        </div>
       </div>
 
       <div class="message">Нет проверенных замеров</div>
@@ -89,7 +119,9 @@
 
       <div class="table-container">
         <div class="table-title">+ Добавить новые замеры</div>
-        <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
+        <app-measurement-form
+          (newMeasurement)="addNewMeasurement($event)"
+        ></app-measurement-form>
 
         <table class="table">
           <thead>
@@ -102,7 +134,11 @@
           <tbody>
             <tr *ngFor="let item of tableData">
               <td>
-                <input type="checkbox" [checked]="isChecked(item)" (click)="toggleCheck(item)" />
+                <input
+                  type="checkbox"
+                  [checked]="isChecked(item)"
+                  (click)="toggleCheck(item)"
+                />
               </td>
               <td>{{ item.date }}</td>
 

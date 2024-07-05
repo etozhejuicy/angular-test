@@ -1,7 +1,7 @@
 .header {
   position: sticky;
   top: 0;
-  padding: 10px;
+  padding: 0.625rem 1.875rem;
 
   background-color: #005cb9;
 
@@ -17,9 +17,11 @@
 }
 
 .logo {
-  font-size: 24px;
-
-  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 4.963rem;
+  height: 2.875rem;
 }
 
 .buttons {
