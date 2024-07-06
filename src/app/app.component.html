@@ -28,9 +28,9 @@
       </div>
 
       <div class="list-container">
-        <div class="list-title">
-          <button>Список</button>
-          <button>Ведомость</button>
+        <div class="tab-header">
+          <button role="tab" class="tab-link active" data-tab-toggle="tab1">Список</button>
+          <button role="tab" class="tab-link" data-tab-toggle="tab2">Ведомость</button>
         </div>
 
         <div class="list-options">
@@ -73,12 +73,8 @@
     <div class="right-panel">
       <img src="document.png" alt="Document" height="30" />
       <div class="title">PTCH\HH-2</div>
-      <app-button
-        [label]="'Click me!'"
-        [classes]="'btn btn-primary btn-colored btn-dimmed'"
-        [disabled]="isDisabled"
-        (disabledChange)="onDisabledChange($event)"
-      >
+      <app-button [label]="'Click me!'" [classes]="'btn btn-primary btn-colored btn-dimmed'" [disabled]="isDisabled"
+        (disabledChange)="onDisabledChange($event)">
       </app-button>
       <div class="row g-3">
         <div class="col-auto">
@@ -119,9 +115,7 @@
 
       <div class="table-container">
         <div class="table-title">+ Добавить новые замеры</div>
-        <app-measurement-form
-          (newMeasurement)="addNewMeasurement($event)"
-        ></app-measurement-form>
+        <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
 
         <table class="table">
           <thead>
@@ -134,11 +128,7 @@
           <tbody>
             <tr *ngFor="let item of tableData">
               <td>
-                <input
-                  type="checkbox"
-                  [checked]="isChecked(item)"
-                  (click)="toggleCheck(item)"
-                />
+                <input type="checkbox" [checked]="isChecked(item)" (click)="toggleCheck(item)" />
               </td>
               <td>{{ item.date }}</td>
 
