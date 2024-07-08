@@ -1,19 +1,22 @@
+:host {
+  --header-padding-y: 1.0625rem;
+  --header-padding-x: 1.875rem;
+  --header-zindex: 1200;
+}
+
 .header {
   position: sticky;
   top: 0;
-  padding: 0.625rem 1.875rem;
-
-  background-color: #005cb9;
-
-  color: white;
+  z-index: var(--header-zindex);
+  padding: var(--header-padding-y) var(--header-padding-x);
+  background-color: var(--primary);
+  color: var(--white);
 }
 
 .header-inner {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
+  & > .row {
+    align-items: center;
+  }
 }
 
 .logo {

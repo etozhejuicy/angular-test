@@ -1,8 +1,8 @@
 <div class="app-container">
   <app-header class="header"></app-header>
 
-  <div class="content">
-    <div class="left-panel">
+  <main class="content">
+    <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
           <button class="button" for="substations">Подстанции</button>
@@ -29,8 +29,12 @@
 
       <div class="list-container">
         <div class="tab-header">
-          <button role="tab" class="tab-link active" data-tab-toggle="tab1">Список</button>
-          <button role="tab" class="tab-link" data-tab-toggle="tab2">Ведомость</button>
+          <button role="tab" class="tab-link active" data-tab-toggle="tab1">
+            Список
+          </button>
+          <button role="tab" class="tab-link" data-tab-toggle="tab2">
+            Ведомость
+          </button>
         </div>
 
         <div class="list-options">
@@ -50,7 +54,7 @@
           </select>
         </div>
 
-        <table class="list">
+        <table class="table">
           <thead>
             <tr>
               <th>Наименование</th>
@@ -68,13 +72,34 @@
           </tbody>
         </table>
       </div>
-    </div>
-
-    <div class="right-panel">
+    </aside>
+    <aside class="resizer">
+      <div class="resizer-container">
+        <div class="resizer-icon">
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <use xlink:href="/sprite.svg#dragToMove"></use>
+            <use xlink:href="/sprite.svg#dragToMove"></use>
+            <use xlink:href="/sprite.svg#dragToMove"></use>
+          </svg>
+        </div>
+      </div>
+    </aside>
+    <aside class="right-panel">
       <img src="document.png" alt="Document" height="30" />
       <div class="title">PTCH\HH-2</div>
-      <app-button [label]="'Click me!'" [classes]="'btn btn-primary btn-colored btn-dimmed'" [disabled]="isDisabled"
-        (disabledChange)="onDisabledChange($event)">
+      <app-button
+        [label]="'Click me!'"
+        [classes]="'btn btn-primary btn-colored btn-dimmed'"
+        [disabled]="isDisabled"
+        (disabledChange)="onDisabledChange($event)"
+      >
       </app-button>
       <div class="row g-3">
         <div class="col-auto">
@@ -101,12 +126,8 @@
         </div>
       </div>
 
-      <div class="message">Нет проверенных замеров</div>
-
       <div class="options">
-        <label for="scheme">Схема</label>
-
-        <input type="checkbox" id="scheme" />
+        <div class="message">Нет проверенных замеров</div>
 
         <label for="group-by-date">Группировать по дате</label>
 
@@ -115,7 +136,9 @@
 
       <div class="table-container">
         <div class="table-title">+ Добавить новые замеры</div>
-        <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
+        <app-measurement-form
+          (newMeasurement)="addNewMeasurement($event)"
+        ></app-measurement-form>
 
         <table class="table">
           <thead>
@@ -128,7 +151,11 @@
           <tbody>
             <tr *ngFor="let item of tableData">
               <td>
-                <input type="checkbox" [checked]="isChecked(item)" (click)="toggleCheck(item)" />
+                <input
+                  type="checkbox"
+                  [checked]="isChecked(item)"
+                  (click)="toggleCheck(item)"
+                />
               </td>
               <td>{{ item.date }}</td>
 
@@ -151,8 +178,8 @@
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
+    </aside>
+  </main>
 
   <div class="footer">Версия 11.6.5.41</div>
 </div>

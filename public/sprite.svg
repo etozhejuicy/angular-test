@@ -1,0 +1,64 @@
+<!-- svg-sprite -->
+<svg id="mysprite" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true"
+    focusable="false">
+    <symbol id="state" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_20_1661)">
+            <path
+                d="M23 8C23 9.1 22.1 10 21 10C20.82 10 20.65 9.98 20.49 9.93L16.93 13.48C16.98 13.64 17 13.82 17 14C17 15.1 16.1 16 15 16C13.9 16 13 15.1 13 14C13 13.82 13.02 13.64 13.07 13.48L10.52 10.93C10.36 10.98 10.18 11 10 11C9.82 11 9.64 10.98 9.48 10.93L4.93 15.49C4.98 15.65 5 15.82 5 16C5 17.1 4.1 18 3 18C1.9 18 1 17.1 1 16C1 14.9 1.9 14 3 14C3.18 14 3.35 14.02 3.51 14.07L8.07 9.52C8.02 9.36 8 9.18 8 9C8 7.9 8.9 7 10 7C11.1 7 12 7.9 12 9C12 9.18 11.98 9.36 11.93 9.52L14.48 12.07C14.64 12.02 14.82 12 15 12C15.18 12 15.36 12.02 15.52 12.07L19.07 8.51C19.02 8.35 19 8.18 19 8C19 6.9 19.9 6 21 6C22.1 6 23 6.9 23 8Z"
+                fill="currentColor" />
+        </g>
+        <defs>
+            <clipPath id="clip0_20_1661">
+                <rect width="24" height="24" fill="currentColor" />
+            </clipPath>
+        </defs>
+    </symbol>
+    <symbol id="document" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2ZM16 18H8V16H16V18ZM16 14H8V12H16V14ZM13 9V3.5L18.5 9H13Z"
+            fill="currentColor" />
+    </symbol>
+    <symbol id="tools" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_20_1674)">
+            <path d="M18 16H16V15H8V16H6V15H2V20H22V15H18V16Z" fill="currentColor" />
+            <path
+                d="M20 8H17V6C17 4.9 16.1 4 15 4H9C7.9 4 7 4.9 7 6V8H4C2.9 8 2 8.9 2 10V14H6V12H8V14H16V12H18V14H22V10C22 8.9 21.1 8 20 8ZM15 8H9V6H15V8Z"
+                fill="currentColor" />
+        </g>
+        <defs>
+            <clipPath id="clip0_20_1674">
+                <rect width="24" height="24" fill="currentColor" />
+            </clipPath>
+        </defs>
+    </symbol>
+    <symbol id="grid-view" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_598)">
+            <path d="M19 22V15.6842H12V22H19ZM19 14.6316V2H12V14.6316H19ZM5 22H11V2H5L5 22Z"
+                fill="currentColor" />
+        </g>
+        <defs>
+            <clipPath id="clip0_1_598">
+                <rect width="24" height="24" fill="currentColor" transform="matrix(0 -1 1 0 0 24)" />
+            </clipPath>
+        </defs>
+    </symbol>
+    <symbol id="view-week" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <g clip-path="url(#clip0_1_602)">
+            <path
+                d="M6 5H3C2.45 5 2 5.45 2 6V18C2 18.55 2.45 19 3 19H6C6.55 19 7 18.55 7 18V6C7 5.45 6.55 5 6 5ZM20 5H17C16.45 5 16 5.45 16 6V18C16 18.55 16.45 19 17 19H20C20.55 19 21 18.55 21 18V6C21 5.45 20.55 5 20 5ZM13 5H10C9.45 5 9 5.45 9 6V18C9 18.55 9.45 19 10 19H13C13.55 19 14 18.55 14 18V6C14 5.45 13.55 5 13 5Z"
+                fill="currentColor" />
+        </g>
+        <defs>
+            <clipPath id="clip0_1_602">
+                <rect width="24" height="24" fill="currentColor" />
+            </clipPath>
+        </defs>
+    </symbol>
+    <svg id="dragToMove" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+            d="M2.8 10C2.8 10.77 2.17 11.4 1.4 11.4C0.63 11.4 0 10.77 0 10C0 9.23001 0.63 8.60001 1.4 8.60001C2.17 8.60001 2.8 9.23001 2.8 10ZM1.4 4.40001C0.63 4.40001 0 5.03001 0 5.80001C0 6.57001 0.63 7.20001 1.4 7.20001C2.17 7.20001 2.8 6.57001 2.8 5.80001C2.8 5.03001 2.17 4.40001 1.4 4.40001ZM1.4 0.200012C0.63 0.200012 0 0.830012 0 1.60001C0 2.37001 0.63 3.00001 1.4 3.00001C2.17 3.00001 2.8 2.37001 2.8 1.60001C2.8 0.830012 2.17 0.200012 1.4 0.200012ZM5.6 3.00001C6.37 3.00001 7 2.37001 7 1.60001C7 0.830012 6.37 0.200012 5.6 0.200012C4.83 0.200012 4.2 0.830012 4.2 1.60001C4.2 2.37001 4.83 3.00001 5.6 3.00001ZM5.6 4.40001C4.83 4.40001 4.2 5.03001 4.2 5.80001C4.2 6.57001 4.83 7.20001 5.6 7.20001C6.37 7.20001 7 6.57001 7 5.80001C7 5.03001 6.37 4.40001 5.6 4.40001ZM5.6 8.60001C4.83 8.60001 4.2 9.23001 4.2 10C4.2 10.77 4.83 11.4 5.6 11.4C6.37 11.4 7 10.77 7 10C7 9.23001 6.37 8.60001 5.6 8.60001Z"
+            fill="currentColor" />
+    </svg>
+
+</svg>
