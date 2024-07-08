@@ -118,23 +118,23 @@
 
 .table {
   width: 100%;
-
   border-collapse: collapse;
+  border: 0.0625rem solid #ddd;
 }
 
 .table th,
 .table td {
-  padding: 8px;
+  padding: 0.5rem;
 
   text-align: left;
-
-  border-bottom: 1px solid #ddd;
+  border-right: 0.0625rem solid #ddd;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 .table th {
   background-color: #f2f2f2;
-
-  font-weight: bold;
+  font-weight: 500;
+  font-size: 1.125rem;
 }
 
 .table tr {
@@ -146,7 +146,7 @@
 .footer {
   padding: 10px;
 
-  background-color: #005cb9;
+  background-color: var(--primary);
 
   color: white;
 }

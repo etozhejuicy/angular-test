@@ -3,7 +3,7 @@
   #{$prefix}-btn-padding-y: 0.625rem;
   #{$prefix}-btn-font-size: 1.125rem;
   #{$prefix}-btn-font-weight: 500;
-  #{$prefix}-btn-line-height: auto;
+  #{$prefix}-btn-line-height: 0;
   #{$prefix}-btn-color: var(--dark);
   #{$prefix}-btn-bg: transparent;
   #{$prefix}-btn-border-width: 0;
@@ -116,8 +116,6 @@
   &-icon {
     #{$prefix}-btn-size: var(#{$prefix}-btn-font-size);
     #{$prefix}-btn-gap: 0.5rem;
-    // #{$prefix}-btn-padding-x: 1rem;
-    // #{$prefix}-btn-padding-y: 1rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -351,58 +349,6 @@
         #{$prefix}-btn-bg: rgba(var(--#{$value}-rgb), 0.45);
       }
     }
-  }
-}
-
-@property --progress-value {
-  syntax: "<percent>";
-  initial-value: 0%;
-  inherits: false;
-}
-
-@keyframes progress {
-  to {
-    --finish-value: var(--progress-value);
-  }
-}
-
-.btn-progress {
-  &-round {
-    position: absolute;
-    top: calc(-3 * var(#{$prefix}-border-width));
-    left: calc(-3 * var(#{$prefix}-border-width));
-    z-index: -1;
-    width: calc(100% + var(#{$prefix}-border-width) * 6);
-    height: calc(100% + var(#{$prefix}-border-width) * 6);
-    border-radius: var(#{$prefix}-border-radius);
-    animation: progress 2s 1 forwards;
-  }
-  &-spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    transform-origin: center center;
-    & .spinner-border {
-      width: 100%;
-      height: 100%;
-      #{$prefix}-spinner-border-width: 0.2rem;
-    }
-  }
-}
-
-.btn-tag {
-  #{$prefix}-btn-padding-x: 0.75rem;
-  #{$prefix}-btn-padding-y: 0.62rem;
-  #{$prefix}-btn-font-size: 0.75rem;
-  #{$prefix}-btn-font-weight: 400;
-  #{$prefix}-btn-line-height: 120%;
-  &-card {
-    #{$prefix}-btn-padding-x: 0.5rem;
-    #{$prefix}-btn-padding-y: 0.22rem;
-    #{$prefix}-btn-font-size: 0.875rem;
   }
 }
 
