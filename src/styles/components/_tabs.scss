@@ -2,7 +2,7 @@
   --tab-block-padding-y: 0.5rem;
   --tab-block-padding-x: 0.5rem;
   --tab-block-border-radius: 7.6875rem;
-  --tab-block-background-color: rgba(var(--black-rgb), 0.8);
+  --tab-block-background-color: rgba(var(--secondary-rgb), 0.8);
   --tab-block-backdrop-filter: blur(0.5rem);
 }
 
@@ -12,7 +12,9 @@
     & > .tab-link {
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
-      border-bottom: 0;
+      &:is(.active) {
+        border-bottom: var(--grey) solid 0.0625rem;
+      }
     }
   }
   &-content {
@@ -32,21 +34,20 @@
     #{$prefix}-btn-font-size: 1rem;
     #{$prefix}-btn-font-weight: 400;
     #{$prefix}-btn-line-height: 120%;
-    #{$prefix}-btn-color: var(--blue);
+    #{$prefix}-btn-color: var(--primary);
     #{$prefix}-btn-bg: var(--transparent);
     #{$prefix}-btn-border-width: 0.0625rem;
-    #{$prefix}-btn-border-color: var(--secondary);
+    #{$prefix}-btn-border-color: var(--transparent);
     #{$prefix}-btn-border-radius: 0.25rem;
     #{$prefix}-btn-hover-border-color: var(--secondary);
     #{$prefix}-btn-box-shadow: none;
     #{$prefix}-btn-disabled-opacity: 0.65;
-    #{$prefix}-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(#{$prefix}-btn-focus-shadow-rgb), 0.5);
+    #{$prefix}-btn-focus-box-shadow: 0 0 0 0.25rem
+      rgba(var(#{$prefix}-btn-focus-shadow-rgb), 0.5);
     #{$prefix}-btn-letter-spacing: -0.02rem;
     display: inline-block;
     padding: var(#{$prefix}-btn-padding-y) var(#{$prefix}-btn-padding-x);
-    font-feature-settings:
-      "clig" off,
-      "liga" off;
+    font-feature-settings: "clig" off, "liga" off;
     font-family: var(#{$prefix}-btn-font-family);
     font-size: var(#{$prefix}-btn-font-size);
     font-weight: var(#{$prefix}-btn-font-weight);
@@ -61,20 +62,19 @@
     -moz-user-select: none;
     user-select: none;
     text-transform: none;
-    border: var(#{$prefix}-btn-border-width) solid var(#{$prefix}-btn-border-color);
+    border: var(#{$prefix}-btn-border-width) solid
+      var(#{$prefix}-btn-border-color);
     border-radius: var(#{$prefix}-btn-border-radius);
     background-color: transparent;
     box-shadow: none;
-    transition:
-      color 0.15s ease-in-out,
-      background-color 0.15s ease-in-out,
-      border-color 0.15s ease-in-out,
-      box-shadow 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     @media (prefers-reduced-motion: reduce) {
       transition: none;
     }
     &.active {
-      background-color: #f2f2f2;
+      #{$prefix}-btn-border-color: var(--secondary);
+      background-color: var(--grey);
     }
   }
 }

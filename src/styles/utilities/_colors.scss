@@ -9,8 +9,8 @@
   --light-grey-rgb: 246, 246, 246;
   --dark-grey: #2b2b2b;
   --dark-grey-rgb: 43, 43, 43;
-  --grey: #dddddd;
-  --grey-rgb: 221, 221, 221;
+  --grey: #f2f2f2;
+  --grey-rgb: 242, 242, 242;
   --true-black: #000000;
   --true-black-rgb: 0, 0, 0;
   --black: #262122;
@@ -44,7 +44,7 @@
 
 $white: #ffffff;
 $dark-white: #fafafa;
-$grey: #eeeeee;
+$grey: #f2f2f2;
 $dark: #0e0e0e;
 $light-grey: #f6f6f6;
 $dark-grey: #2b2b2b;
@@ -81,7 +81,7 @@ $colors: (
   $vk: "vk",
   $grey: "grey",
   $green: "green",
-  $transparent: "transparent"
+  $transparent: "transparent",
 );
 
 @each $color, $value in $colors {

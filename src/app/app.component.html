@@ -5,22 +5,37 @@
     <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
-          <button class="button" for="substations">Подстанции</button>
-          <span>→</span>
+          <button
+            class="btn btn-sm btn-icon btn-outline-secondary"
+            for="substations"
+          >
+            <svg
+              width="16"
+              height="16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <use xlink:href="/sprite.svg#hamburger"></use>
+            </svg>
+            <span class="btn-icon-text">Подстанции</span>
+          </button>
+          <span> > </span>
           <span *ngFor="let item of substations">{{ item.value }}</span>
         </div>
       </div>
 
-      <div class="selection">
-        <label for="substations">Подстанция</label>
-        <select id="substations">
+      <div class="tab-header">
+        <button for="substations" class="tab-link">Подстанция</button>
+        <select class="form-select d-none" id="substations">
           <option value="{{ item.name }}" *ngFor="let item of substations">
             {{ item.value }}
           </option>
         </select>
 
-        <label for="equipment">Оборудование</label>
-        <select id="equipment">
+        <button for="equipment" class="tab-link active">Оборудование</button>
+        <select class="form-select d-none" id="equipment">
           <option value="{{ item.name }}" *ngFor="let item of equipment">
             {{ item.value }}
           </option>
@@ -28,18 +43,23 @@
       </div>
 
       <div class="list-container">
-        <div class="tab-header">
-          <button role="tab" class="tab-link active" data-tab-toggle="tab1">
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-secondary btn-colored"
+          >
             Список
           </button>
-          <button role="tab" class="tab-link" data-tab-toggle="tab2">
+          <button
+            type="button"
+            class="btn btn-sm btn-outline-secondary btn-colored"
+          >
             Ведомость
           </button>
         </div>
 
         <div class="list-options">
           <label for="equipmentTypes">Тип</label>
-
           <select id="equipmentTypes">
             <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">
               {{ item.value }}
@@ -85,108 +105,171 @@
             focusable="false"
           >
             <use xlink:href="/sprite.svg#dragToMove"></use>
+          </svg>
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use xlink:href="/sprite.svg#dragToMove"></use>
+          </svg>
+          <svg
+            width="16"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
         </div>
       </div>
     </aside>
     <aside class="right-panel">
-      <img src="document.png" alt="Document" height="30" />
-      <div class="title">PTCH\HH-2</div>
-      <div class="row g-3">
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#certificate"></use>
-            </svg>
-            <span class="btn-icon-text">Проверить</span>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#cancel"></use>
-            </svg>
-            <span class="btn-icon-text"> Отменить проверку </span>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#certificate"></use>
-            </svg>
-            <span class="btn-icon-text"> Редактировать </span>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#certificate"></use>
-            </svg>
-            <span class="btn-icon-text"> Удалить </span>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#certificate"></use>
-            </svg>
-          </button>
-        </div>
-        <div class="col-auto">
-          <button class="btn btn-icon btn-outline-primary btn-colored">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <use xlink:href="/sprite.svg#certificate"></use>
-            </svg>
-          </button>
+      <div class="right-panel-header">
+        <div class="right-panel-title">
+          <img src="document.png" alt="Document" height="30" />
+          <div>PTCH\HH-2</div>
         </div>
       </div>
 
-      <div class="options">
-        <div class="message">Нет проверенных замеров</div>
+      <div class="right-panel-actions">
+        <div class="row g-3">
+          <div class="col">
+            <div class="row g-3">
+              <div class="col-auto">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <use xlink:href="/sprite.svg#certificate"></use>
+                  </svg>
+                  <span class="btn-icon-text">Проверить</span>
+                </button>
+              </div>
+              <div class="col-auto">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <use xlink:href="/sprite.svg#cancel"></use>
+                  </svg>
+                  <span class="btn-icon-text"> Отменить проверку </span>
+                </button>
+              </div>
+              <div class="col-auto">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <use xlink:href="/sprite.svg#edit"></use>
+                  </svg>
+                  <span class="btn-icon-text"> Редактировать </span>
+                </button>
+              </div>
+              <div class="col-auto">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <use xlink:href="/sprite.svg#delete"></use>
+                  </svg>
+                  <span class="btn-icon-text"> Удалить </span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto">
+            <div class="row g-3">
+              <div class="col-auto">
+                <div class="btn-group">
+                  <button
+                    class="btn btn-sm btn-icon btn-outline-secondary btn-colored"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <use xlink:href="/sprite.svg#vertical"></use>
+                    </svg>
+                  </button>
+                  <button
+                    class="btn btn-sm btn-icon btn-outline-secondary btn-colored"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <use xlink:href="/sprite.svg#horizontal"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-secondary btn-colored"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <use xlink:href="/sprite.svg#expand"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel-options">
+        <div class="message">
+          <span class="text-warning">Нет</span> проверенных замеров
+        </div>
 
         <div class="form-check form-switch form-switch-primary">
           <input
