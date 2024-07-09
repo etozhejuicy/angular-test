@@ -1,15 +1,78 @@
 <form (submit)="addMeasurement()">
-  <input type="text" placeholder="Фаза" id="phase" #phase required />
-
-  <input type="text" placeholder="U, kB" id="u" #u required />
-
-  <input type="text" placeholder="I, A" id="i" #i required />
-
-  <input type="text" placeholder="Р, МВт" id="p" #p required />
-
-  <input type="text" placeholder="Q, Мвар" id="q" #q required />
-
-  <input type="text" placeholder="coѕ ф" id="cos" #cos required />
-
-  <button type="submit">Добавить</button>
+  <div class="row g-3">
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="Фаза"
+        id="phase"
+        #phase
+        required
+      />
+    </div>
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="U, kB"
+        id="u"
+        #u
+        required
+      />
+    </div>
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="I, A"
+        id="i"
+        #i
+        required
+      />
+    </div>
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="Р, МВт"
+        id="p"
+        #p
+        required
+      />
+    </div>
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="Q, Мвар"
+        id="q"
+        #q
+        required
+      />
+    </div>
+    <div class="col-12 col-md-4">
+      <input
+        class="form-control form-control-grey w-100"
+        type="text"
+        placeholder="coѕ ф"
+        id="cos"
+        #cos
+        required
+      />
+    </div>
+    <div class="col-12">
+      <div class="row g-3">
+        <div class="col">
+          <button type="submit" class="btn btn-sm btn-outline-grey w-100">
+            Добавить
+          </button>
+        </div>
+        <div class="col">
+          <button type="reset" class="btn btn-sm btn-secondary w-100">
+            Сбросить
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </form>

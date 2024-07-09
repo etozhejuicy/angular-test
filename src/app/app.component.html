@@ -1,7 +1,8 @@
 <div class="app-container">
   <app-header class="header"></app-header>
-
-  <main class="content">
+  <!-- content -->
+  <main class="content resizable-x">
+    <!-- left side -->
     <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
@@ -90,7 +91,9 @@
         </table>
       </div>
     </aside>
-    <aside class="resizer">
+
+    <!-- resizer -->
+    <aside class="resizer resizer-x">
       <div class="resizer-container">
         <div class="resizer-icon">
           <svg
@@ -126,6 +129,8 @@
         </div>
       </div>
     </aside>
+
+    <!-- right side -->
     <aside class="right-panel">
       <div class="right-panel-header">
         <div class="right-panel-title">
@@ -290,12 +295,19 @@
           <tbody>
             <tr>
               <td colspan="10">
-                <div class="table-title text-primary">
-                  + Добавить новые замеры
+                <div data-collapse-id="measurement_form">
+                  <div
+                    class="table-title text-primary"
+                    data-collapse-toggle="measurement_form"
+                  >
+                    + Добавить новые замеры
+                  </div>
+                  <div class="collapse">
+                    <app-measurement-form
+                      (newMeasurement)="addNewMeasurement($event)"
+                    ></app-measurement-form>
+                  </div>
                 </div>
-                <app-measurement-form
-                  (newMeasurement)="addNewMeasurement($event)"
-                ></app-measurement-form>
               </td>
             </tr>
             <tr *ngFor="let item of tableData">

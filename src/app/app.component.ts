@@ -3,6 +3,9 @@ import { NgFor } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
 import { ButtonComponent } from './button/button.component';
+import '../js/modules/jquery.js';
+import '../js/modules/collapse.js';
+import '../js/modules/resizer.js';
 
 @Component({
   standalone: true,
@@ -205,7 +208,5 @@ export class AppComponent {
     console.log(`Disabled state changed to: ${disabled}`);
 
     this.isDisabled = disabled;
-
-    // Update your app's state accordingly
   }
 }

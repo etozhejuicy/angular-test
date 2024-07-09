@@ -1,17 +1,17 @@
 :root {
-  --padding-input-y: 1rem;
-  --padding-input-x: 1rem;
-  --form-font-size: 1rem;
-  --form-line-height: 1.2rem;
+  --padding-input-y: 0.5rem;
+  --padding-input-x: 0.75rem;
+  --form-font-size: 0.875rem;
+  --form-line-height: 1.2;
   --form-font-weight: 400;
-  --form-font-color: var(--grey-rgb);
+  --form-font-color: var(--black-rgb);
   --form-font-color-opacity: 0.8;
   --form-letter-spacing: -0.02rem;
   --form-border-width: 0.0625rem;
   --form-border-color: var(--grey-rgb);
   --form-border-color-opacity: 1;
   --form-border-radius: 0.25rem;
-  --form-background-color: var(--dark-grey-rgb);
+  --form-background-color: var(--white-rgb);
   --form-background-color-opacity: 0.5;
   --form-icon-width: 1rem;
   --form-icon-height: 1rem;
@@ -76,7 +76,6 @@
     }
   }
   &-control {
-    --form-border-color: var(--form-background-color);
     display: block;
     width: 100%;
     padding: var(--padding-input-y) var(--padding-input-x);
