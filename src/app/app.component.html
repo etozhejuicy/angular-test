@@ -6,7 +6,7 @@
       <div class="left-panel-header">
         <div class="left-panel-action">
           <button
-            class="btn btn-sm btn-icon btn-outline-secondary"
+            class="btn btn-sm btn-icon btn-outline-grey"
             for="substations"
           >
             <svg
@@ -46,28 +46,25 @@
         <div class="btn-group">
           <button
             type="button"
-            class="btn btn-sm btn-outline-secondary btn-colored"
+            class="btn btn-sm btn-icon btn-outline-grey active"
           >
             Список
           </button>
-          <button
-            type="button"
-            class="btn btn-sm btn-outline-secondary btn-colored"
-          >
+          <button type="button" class="btn btn-sm btn-icon btn-outline-grey">
             Ведомость
           </button>
         </div>
 
         <div class="list-options">
           <label for="equipmentTypes">Тип</label>
-          <select id="equipmentTypes">
+          <select class="form-select" id="equipmentTypes">
             <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">
               {{ item.value }}
             </option>
           </select>
 
           <label for="ruValues">РУ</label>
-          <select id="ruValues">
+          <select class="form-select" id="ruValues">
             <option value="{{ item.name }}" *ngFor="let item of ruValues">
               {{ item.value }}
             </option>
@@ -280,11 +277,6 @@
       </div>
 
       <div class="table-container">
-        <div class="table-title">+ Добавить новые замеры</div>
-        <app-measurement-form
-          (newMeasurement)="addNewMeasurement($event)"
-        ></app-measurement-form>
-
         <table class="table">
           <thead>
             <tr>
@@ -296,6 +288,16 @@
           </thead>
 
           <tbody>
+            <tr>
+              <td colspan="10">
+                <div class="table-title text-primary">
+                  + Добавить новые замеры
+                </div>
+                <app-measurement-form
+                  (newMeasurement)="addNewMeasurement($event)"
+                ></app-measurement-form>
+              </td>
+            </tr>
             <tr *ngFor="let item of tableData">
               <td class="form-check-primary">
                 <input

@@ -1,32 +1,33 @@
 .form-select {
   #{$prefix}-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   #{$prefix}-border-width: 0.0625rem;
-  #{$prefix}-form-select-bg: var(--white);
-  #{$prefix}-form-select-bg-size: 1rem 0.75rem;
+  #{$prefix}-form-select-bg: transparent;
+  #{$prefix}-form-select-bg-size: 0.75rem;
   #{$prefix}-form-select-color: var(--black);
   #{$prefix}-border-color: var(--secondary);
-  #{$prefix}-form-select-border-radius: 0.9375rem;
+  #{$prefix}-form-select-border-radius: 0.25rem;
   #{$prefix}-form-select-padding-left: 0.75rem;
   #{$prefix}-form-select-padding-top: 0.281rem;
-  #{$prefix}-form-select-padding-right: calc(0.75rem + 0.625rem * 2);
+  #{$prefix}-form-select-padding-right: calc(
+    var(#{$prefix}-form-select-bg-size) + 0.625rem * 2
+  );
   #{$prefix}-form-select-padding-bottom: 0.281rem;
   #{$prefix}-form-select-font-size: 0.875rem;
   display: block;
-  width: 100%;
   padding: var(#{$prefix}-form-select-padding-top)
     var(#{$prefix}-form-select-padding-right)
     var(#{$prefix}-form-select-padding-bottom)
     var(#{$prefix}-form-select-padding-left);
   font-style: normal;
   font-size: var(#{$prefix}-form-select-font-size);
-  font-weight: bold;
-  line-height: 1.5;
+  font-weight: normal;
+  line-height: 120%;
   color: var(#{$prefix}-form-select-color);
   background-color: var(#{$prefix}-form-select-bg);
   background-image: var(#{$prefix}-form-select-bg-img),
     var(#{$prefix}-form-select-bg-icon, none);
   background-repeat: no-repeat;
-  background-position: right 0.75rem center;
+  background-position: right var(#{$prefix}-form-select-bg-size) center;
   background-size: var(#{$prefix}-form-select-bg-size);
   border: var(#{$prefix}-border-width) solid var(#{$prefix}-border-color);
   border-radius: var(#{$prefix}-form-select-border-radius);

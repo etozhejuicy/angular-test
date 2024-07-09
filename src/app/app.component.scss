@@ -16,8 +16,12 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   flex: 1;
   padding: var(--content-padding-y) var(--content-padding-x);
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
 }
 
 .left-panel {
@@ -25,7 +29,7 @@
   flex-direction: column;
   row-gap: var(--right-panel-gap);
   column-gap: var(--right-panel-gap);
-  width: calc(50% - var(--resizer-width));
+  // width: calc(50% - var(--resizer-width));
   padding: var(--aside-padding-y) var(--aside-padding-x);
   &-header {
     display: flex;
@@ -51,17 +55,32 @@
 
 .resizer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: var(--resizer-width);
-  height: 100%;
+  width: 100%;
+  height: var(--resizer-width);
   background: var(--grey);
-  cursor: e-resize;
+  cursor: n-resize;
+  @media (min-width: 1200px) {
+    flex-direction: column;
+    width: var(--resizer-width);
+    height: 100%;
+    cursor: e-resize;
+  }
   &-icon {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: rgba(var(--black-rgb), 0.5);
+    @media (min-width: 1200px) {
+      flex-direction: column;
+    }
+    & > * {
+      transform: rotate(90deg);
+      @media (min-width: 1200px) {
+        transform: none;
+      }
+    }
   }
 }
 
