@@ -224,6 +224,17 @@
     #{$prefix}-btn-active-bg: #{darken($color, 10%)};
     #{$prefix}-btn-active-color: #{lighten($color, 65%)};
     #{$prefix}-btn-active-border-color: #{darken($color, 10%)};
+    @if $value == "grey" {
+      #{$prefix}-btn-color: #{darken($color, 75%)};
+      #{$prefix}-btn-border-color: #{darken($color, 10%)};
+      #{$prefix}-btn-hover-color: #{darken($color, 50%)};
+      #{$prefix}-btn-hover-bg: #{lighten($color, 5%)};
+      #{$prefix}-btn-hover-border-color: #{darken($color, 25%)};
+      #{$prefix}-btn-bg: transparent !important;
+      #{$prefix}-btn-active-bg: var(--#{$value});
+      #{$prefix}-btn-active-color: #{darken($color, 75%)};
+      #{$prefix}-btn-active-border-color: #{darken($color, 15%)};
+    }
     @if $value == "white" {
       #{$prefix}-btn-bg: transparent !important;
       #{$prefix}-btn-active-bg: #{lighten($color, 15%)};
