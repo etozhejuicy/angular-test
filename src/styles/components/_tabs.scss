@@ -75,7 +75,7 @@
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       background-color: transparent;
-      margin-bottom: calc(-1 * (var(#{$prefix}-btn-border-width) / 2));
+      margin-bottom: calc(-1 * (var(#{$prefix}-btn-border-width)));
       &:is(.active) {
         background-color: var(--grey);
         color: rgba(var(--grey-700-rgb), 1);
