@@ -14,7 +14,7 @@
   @for $i from 0 through 12 {
     &-#{$i} {
       flex: 0 0 auto;
-      width: percentage(divide($i, 12)) !important;
+      width: percentage(divide($i, 12));
     }
     @include breakpoint-xs {
       &-xs {

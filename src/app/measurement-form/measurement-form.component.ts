@@ -7,7 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 
   templateUrl: './measurement-form.component.html',
 
-  styleUrls: ['./measurement-form.component.css'],
+  styleUrls: ['./measurement-form.component.scss'],
 })
 export class MeasurementFormComponent {
   @Output() newMeasurement = new EventEmitter<any>();

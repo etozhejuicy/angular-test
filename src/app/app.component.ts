@@ -3,6 +3,8 @@ import { NgFor } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
 import { ButtonComponent } from './button/button.component';
+
+// js-solutions
 import '../js/modules/jquery.js';
 import '../js/modules/collapse.js';
 import '../js/modules/resizer.js';

@@ -1,5 +1,3 @@
-"use strict";
-
 // horizontal direction
 function resizableX() {
   const resizer = document.querySelector(".resizer-x");

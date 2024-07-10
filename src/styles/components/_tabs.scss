@@ -69,16 +69,19 @@
   }
   &-header {
     #{$prefix}-btn-border-width: 0.0625rem;
-    border-bottom: var(--secondary) solid var(#{$prefix}-btn-border-width);
+    border-bottom: var(--grey-300) solid var(#{$prefix}-btn-border-width);
     & > .tab-link {
+      border-collapse: collapse;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       background-color: transparent;
-      margin-bottom: calc(-1 * (var(#{$prefix}-btn-border-width) / 1));
+      margin-bottom: calc(-1 * (var(#{$prefix}-btn-border-width) / 2));
       &:is(.active) {
         background-color: var(--grey);
-        color: rgba(var(--dark-rgb), 1);
-        border: var(#{$prefix}-btn-border-width) solid var(--secondary);
+        color: rgba(var(--grey-700-rgb), 1);
+        border-top: var(#{$prefix}-btn-border-width) solid var(--grey-300);
+        border-left: var(#{$prefix}-btn-border-width) solid var(--grey-300);
+        border-right: var(#{$prefix}-btn-border-width) solid var(--grey-300);
         border-bottom: var(--grey) solid var(#{$prefix}-btn-border-width);
       }
     }

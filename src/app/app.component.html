@@ -57,19 +57,26 @@
         </div>
 
         <div class="list-options">
-          <label for="equipmentTypes">Тип</label>
-          <select class="form-select" id="equipmentTypes">
-            <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">
-              {{ item.value }}
-            </option>
-          </select>
+          <div class="list-option">
+            <label for="equipmentTypes">Тип</label>
+            <select class="form-select" id="equipmentTypes">
+              <option
+                value="{{ item.name }}"
+                *ngFor="let item of equipmentTypes"
+              >
+                {{ item.value }}
+              </option>
+            </select>
+          </div>
 
-          <label for="ruValues">РУ</label>
-          <select class="form-select" id="ruValues">
-            <option value="{{ item.name }}" *ngFor="let item of ruValues">
-              {{ item.value }}
-            </option>
-          </select>
+          <div class="list-option">
+            <label for="ruValues">РУ</label>
+            <select class="form-select" id="ruValues">
+              <option value="{{ item.name }}" *ngFor="let item of ruValues">
+                {{ item.value }}
+              </option>
+            </select>
+          </div>
         </div>
 
         <table class="table">
