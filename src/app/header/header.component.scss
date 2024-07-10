@@ -11,21 +11,26 @@
   padding: var(--header-padding-y) var(--header-padding-x);
   background-color: var(--primary);
   color: var(--white);
-  &-title {
-    font-size: 1.75rem;
+  &-inner {
+    & > .row {
+      align-items: center;
+    }
   }
-}
-
-.header-inner {
-  & > .row {
+  &-logo {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: row;
     align-items: center;
+    flex-wrap: nowrap;
+    row-gap: 1.412rem;
+    column-gap: 1.412rem;
   }
-}
-
-.logo {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  width: 4.963rem;
-  height: 2.875rem;
+  &-image {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 4.963rem;
+    height: 2.875rem;
+  }
 }

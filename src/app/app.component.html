@@ -19,14 +19,14 @@
             </svg>
             <span class="btn-icon-text">Подстанции</span>
           </label>
-          <select id="substations" aria-hidden>
+          <select id="substations">
             <option *ngFor="let item of substations">{{ item.value }}</option>
           </select>
           <span> > </span>
           <span>{{ selectedSubstation }}</span>
         </div>
         <div class="left-panel-state">
-          <button class="btn btn-sm btn-icon btn-primary btn-colored">
+          <button class="btn btn-sm btn-icon btn-primary">
             <svg
               width="1rem"
               height="1rem"
