@@ -6,13 +6,10 @@
     <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
-          <button
-            class="btn btn-sm btn-icon btn-outline-grey"
-            for="substations"
-          >
+          <label class="btn btn-sm btn-icon btn-outline-grey" for="substations">
             <svg
-              width="16"
-              height="16"
+              width="1rem"
+              height="1rem"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -21,9 +18,27 @@
               <use xlink:href="/sprite.svg#hamburger"></use>
             </svg>
             <span class="btn-icon-text">Подстанции</span>
-          </button>
+          </label>
+          <select id="substations" aria-hidden>
+            <option *ngFor="let item of substations">{{ item.value }}</option>
+          </select>
           <span> > </span>
-          <span *ngFor="let item of substations">{{ item.value }}</span>
+          <span>{{ selectedSubstation }}</span>
+        </div>
+        <div class="left-panel-state">
+          <button class="btn btn-sm btn-icon btn-primary btn-colored">
+            <svg
+              width="1rem"
+              height="1rem"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <use xlink:href="/sprite.svg#save"></use>
+            </svg>
+            <span class="btn-icon-text"> Сохранить </span>
+          </button>
         </div>
       </div>
 
@@ -56,26 +71,47 @@
           </button>
         </div>
 
-        <div class="list-options">
-          <div class="list-option">
-            <label for="equipmentTypes">Тип</label>
-            <select class="form-select" id="equipmentTypes">
-              <option
-                value="{{ item.name }}"
-                *ngFor="let item of equipmentTypes"
-              >
-                {{ item.value }}
-              </option>
-            </select>
-          </div>
+        <div class="left-panel-options">
+          <div class="row g-3 align-items-center">
+            <div class="col">
+              <div class="list-options">
+                <div class="list-option">
+                  <label for="equipmentTypes">Тип</label>
+                  <select class="form-select" id="equipmentTypes">
+                    <option
+                      value="{{ item.name }}"
+                      *ngFor="let item of equipmentTypes"
+                    >
+                      {{ item.value }}
+                    </option>
+                  </select>
+                </div>
 
-          <div class="list-option">
-            <label for="ruValues">РУ</label>
-            <select class="form-select" id="ruValues">
-              <option value="{{ item.name }}" *ngFor="let item of ruValues">
-                {{ item.value }}
-              </option>
-            </select>
+                <div class="list-option">
+                  <label for="ruValues">РУ</label>
+                  <select class="form-select" id="ruValues">
+                    <option
+                      value="{{ item.name }}"
+                      *ngFor="let item of ruValues"
+                    >
+                      {{ item.value }}
+                    </option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="form-check form-switch form-switch-secondary">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  role="switch"
+                  id="scheme"
+                />
+                <label class="form-check-label" for="scheme"> Схема </label>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -104,8 +140,8 @@
       <div class="resizer-container">
         <div class="resizer-icon">
           <svg
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -114,8 +150,8 @@
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
           <svg
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -124,8 +160,8 @@
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
           <svg
-            width="16"
-            height="16"
+            width="1rem"
+            height="1rem"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
@@ -155,8 +191,8 @@
                   class="btn btn-sm btn-icon btn-outline-primary btn-colored"
                 >
                   <svg
-                    width="16"
-                    height="16"
+                    width="1rem"
+                    height="1rem"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -172,8 +208,8 @@
                   class="btn btn-sm btn-icon btn-outline-primary btn-colored"
                 >
                   <svg
-                    width="16"
-                    height="16"
+                    width="1rem"
+                    height="1rem"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -189,8 +225,8 @@
                   class="btn btn-sm btn-icon btn-outline-primary btn-colored"
                 >
                   <svg
-                    width="16"
-                    height="16"
+                    width="1rem"
+                    height="1rem"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -206,8 +242,8 @@
                   class="btn btn-sm btn-icon btn-outline-primary btn-colored"
                 >
                   <svg
-                    width="16"
-                    height="16"
+                    width="1rem"
+                    height="1rem"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -226,8 +262,8 @@
                 <div class="btn-group">
                   <button class="btn btn-sm btn-icon btn-outline-grey active">
                     <svg
-                      width="16"
-                      height="16"
+                      width="1rem"
+                      height="1rem"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
@@ -238,8 +274,8 @@
                   </button>
                   <button class="btn btn-sm btn-icon btn-outline-grey">
                     <svg
-                      width="16"
-                      height="16"
+                      width="1rem"
+                      height="1rem"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
                       aria-hidden="true"
@@ -253,8 +289,8 @@
               <div class="col-auto">
                 <button class="btn btn-sm btn-icon btn-outline-grey">
                   <svg
-                    width="16"
-                    height="16"
+                    width="1rem"
+                    height="1rem"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"

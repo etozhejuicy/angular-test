@@ -181,7 +181,7 @@ export class AppComponent {
 
   // Variables
 
-  selectedSubstation: string = 'ss1';
+  selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
 
   selectedEquipmentType: string = 'transformator';
 

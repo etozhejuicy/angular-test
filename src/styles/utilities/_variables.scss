@@ -4,6 +4,7 @@ $prefix: "--cl";
 
 // default font-size for responsive
 $root-fs: 16;
+$root-ff: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 // default font-size for responsive
 
 // Breakpoints
@@ -21,16 +22,14 @@ $r-xs: 375;
 $r-sm: 576;
 $r-md: 768;
 $r-lg: 992;
-$r-xl: 1680;
-$r-xxxl: 1920;
+$r-xl: 1800;
 
 $responsives: (
   $r-xs: 375,
   $r-sm: 576,
   $r-md: 768,
   $r-lg: 992,
-  $r-xl: 1680,
-  $r-xxxl: 1920,
+  $r-xl: 1800,
 );
 // responsive
 

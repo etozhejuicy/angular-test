@@ -13,13 +13,4 @@
   @media (min-width: 1200px) {
     font-size: calc(100vw / #{$r-xl} * #{$root-fs});
   }
-  @media (min-width: 1440px) {
-    font-size: calc(100vw / #{$r-xl} * #{$root-fs});
-  }
-  @media (min-width: 1600px) {
-    font-size: calc(100vw / #{$r-xl} * #{$root-fs});
-  }
-  @media (min-width: 1920px) {
-    font-size: calc(100vw / #{$r-xxxl} * #{$root-fs});
-  }
 }

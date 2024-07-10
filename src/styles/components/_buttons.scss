@@ -1,9 +1,10 @@
 .btn {
-  #{$prefix}-btn-padding-x: 1rem;
-  #{$prefix}-btn-padding-y: 0.625rem;
-  #{$prefix}-btn-font-size: 1.125rem;
+  #{$prefix}-btn-font-family: $root-ff;
+  #{$prefix}-btn-padding-x: 0.75rem;
+  #{$prefix}-btn-padding-y: 0.375rem;
+  #{$prefix}-btn-font-size: 0.875rem;
   #{$prefix}-btn-font-weight: 500;
-  #{$prefix}-btn-line-height: 1;
+  #{$prefix}-btn-line-height: 1.25;
   #{$prefix}-btn-color: var(--dark);
   #{$prefix}-btn-bg: transparent;
   #{$prefix}-btn-border-width: 0;
@@ -109,6 +110,9 @@
     padding: calc(var(#{$prefix}-btn-padding-y) + 0.56rem)
       calc(var(#{$prefix}-btn-padding-x) + 0.25rem);
   }
+  &-square {
+    #{$prefix}-btn-padding-x: var(#{$prefix}-btn-padding-y);
+  }
   &-rounded {
     #{$prefix}-border-radius: 50rem;
   }
@@ -119,6 +123,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    &-lg {
+      #{$prefix}-btn-font-size: calc(var(#{$prefix}-btn-font-size) + 50%);
+    }
     & > svg {
       display: inline-block;
       vertical-align: middle;
@@ -246,6 +253,11 @@
     &:is(.btn-#{$value}),
     &:is(.btn-outline-#{$value}) {
       #{$prefix}-btn-color: #{$color};
+    }
+    &:is(.btn-#{$value}) {
+      @if $value == "primary" {
+        #{$prefix}-btn-color: #{lighten($color, 100%)};
+      }
     }
   }
   .btn-dimmed {

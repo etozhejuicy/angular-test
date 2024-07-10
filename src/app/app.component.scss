@@ -37,9 +37,21 @@
   &-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     row-gap: var(--right-panel-gap);
     column-gap: var(--right-panel-gap);
+  }
+  &-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 0.625rem;
+    column-gap: 0.625rem;
+  }
+  &-options {
+    width: 100%;
   }
 }
 
@@ -160,6 +172,7 @@
   border: 0.0625rem solid var(--light-grey);
   & th,
   & td {
+    font-weight: 400;
     padding: 0.5rem;
     text-align: left;
     white-space: nowrap;
