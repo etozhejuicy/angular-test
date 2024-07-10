@@ -207,22 +207,15 @@ export class AppComponent {
     measurement.checked = !measurement.checked;
   }
 
-  addNewMeasurement(measurement: any) {
-    this.tableData.unshift(measurement);
-  }
+  // addNewMeasurement(measurement: any) {
+  //   this.tableData.unshift(measurement);
+  // }
 
-  // ButtonComponent
-  isDisabled = false;
-
-  onDisabledChange(disabled: boolean) {
-    console.log(`Disabled state changed to: ${disabled}`);
-
-    this.isDisabled = disabled;
+  addNewMeasurement(measurements: any) {
+    this.tableData.push(measurements);
   }
 
   @ViewChild('dialog') dialog: DialogComponent | undefined;
-
-  constructor() {}
 
   openDialog() {
     if (this.dialog) {
