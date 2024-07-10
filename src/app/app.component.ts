@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
 import { ButtonComponent } from './button/button.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 // js-solutions
 import '../js/modules/jquery.js';
@@ -12,7 +13,13 @@ import '../js/modules/resizer.js';
 @Component({
   standalone: true,
 
-  imports: [NgFor, ButtonComponent, HeaderComponent, MeasurementFormComponent],
+  imports: [
+    NgFor,
+    ButtonComponent,
+    HeaderComponent,
+    MeasurementFormComponent,
+    DialogComponent,
+  ],
 
   selector: 'app-root',
 
@@ -22,6 +29,7 @@ import '../js/modules/resizer.js';
     './app.component.scss',
     './header/header.component.scss',
     './button/button.component.scss',
+    './dialog/dialog.component.scss',
   ],
 })
 export class AppComponent {
@@ -210,5 +218,21 @@ export class AppComponent {
     console.log(`Disabled state changed to: ${disabled}`);
 
     this.isDisabled = disabled;
+  }
+
+  @ViewChild('dialog') dialog: DialogComponent | undefined;
+
+  constructor() {}
+
+  openDialog() {
+    if (this.dialog) {
+      this.dialog.open();
+    }
+  }
+
+  closeDialog() {
+    if (this.dialog) {
+      this.dialog.close();
+    }
   }
 }

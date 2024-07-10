@@ -6,7 +6,11 @@
     <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
-          <label class="btn btn-sm btn-icon btn-outline-grey" for="substations">
+          <button
+            class="btn btn-sm btn-icon btn-outline-grey"
+            (click)="openDialog()"
+            type="button"
+          >
             <svg
               width="1rem"
               height="1rem"
@@ -18,10 +22,14 @@
               <use xlink:href="/sprite.svg#hamburger"></use>
             </svg>
             <span class="btn-icon-text">Подстанции</span>
-          </label>
-          <select id="substations">
-            <option *ngFor="let item of substations">{{ item.value }}</option>
-          </select>
+          </button>
+
+          <app-dialog #dialog title="Выберите подстанцию">
+            <select class="form-select" id="substations">
+              <option *ngFor="let item of substations">{{ item.value }}</option>
+            </select>
+          </app-dialog>
+
           <span> > </span>
           <span>{{ selectedSubstation }}</span>
         </div>
