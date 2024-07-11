@@ -152,12 +152,12 @@ export class AppComponent {
   // Substations
 
   substations: any = [
-    { name: '', value: 'Выберите подстанцию' },
-    { name: 'ss1', value: 'ТЭЦ ПГУ ГСР Энерго' },
-    { name: 'ss2', value: 'Подстанция 2' },
-    { name: 'ss3', value: 'Подстанция 3' },
-    { name: 'ss4', value: 'Подстанция 4' },
-    { name: 'ss5', value: 'Подстанция 5' },
+    { id: 0, value: 'Выберите подстанцию' },
+    { id: 1, value: 'ТЭЦ ПГУ ГСР Энерго' },
+    { id: 2, value: 'Подстанция 2' },
+    { id: 3, value: 'Подстанция 3' },
+    { id: 4, value: 'Подстанция 4' },
+    { id: 5, value: 'Подстанция 5' },
   ];
 
   // equipment
