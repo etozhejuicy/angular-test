@@ -26,6 +26,12 @@
     row-gap: 1.412rem;
     column-gap: 1.412rem;
   }
+  &-title {
+    font-size: 1.25rem;
+    @media (min-width: 768px) {
+      font-size: 1.75rem;
+    }
+  }
   &-image {
     position: relative;
     z-index: 1;

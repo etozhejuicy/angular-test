@@ -1,94 +1,29 @@
-<form (submit)="addMeasurement()">
-  <table class="w-100">
-    <tbody>
-      <tr>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="Источник"
-            id="source"
-            #source
-            required
-          />
-        </td>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="Фаза"
-            id="phase"
-            #phase
-            required
-          />
-        </td>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="U, kB"
-            id="u"
-            #u
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="I, A"
-            id="i"
-            #i
-            required
-          />
-        </td>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="Р, МВт"
-            id="p"
-            #p
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="Q, Мвар"
-            id="q"
-            #q
-            required
-          />
-        </td>
-        <td>
-          <input
-            class="form-control form-control-grey w-100"
-            type="text"
-            placeholder="coѕ ф"
-            id="cos"
-            #cos
-            required
-          />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <button type="submit" class="btn btn-sm btn-outline-grey w-100">
-            Добавить
-          </button>
-        </td>
-        <td>
-          <button type="reset" class="btn btn-sm btn-secondary w-100">
-            Сбросить
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<form class="measurement-form mt-2" (ngSubmit)="addMeasurement()">
+  <div class="measurement-form-content">
+    <div class="measurement-form-fields">
+      <input class="form-control form-control-grey w-100" type="text" placeholder="Источник" id="source" #source
+        required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="Фаза" id="phase" #phase required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="U, kB" id="u" #u required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="I, A" id="i" #i required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="Р, МВт" id="p" #p required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="Q, Мвар" id="q" #q required />
+
+      <input class="form-control form-control-grey w-100" type="text" placeholder="coѕ ф" id="cos" #cos required />
+    </div>
+    <div class="measurement-form-actions">
+      <button type="submit" class="btn btn-sm btn-primary w-100">
+        Добавить
+      </button>
+
+      <button type="reset" class="btn btn-sm btn-outline-grey w-100">
+        Сбросить
+      </button>
+    </div>
+  </div>
 </form>
