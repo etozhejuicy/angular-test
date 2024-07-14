@@ -19,10 +19,12 @@ export class DialogComponent {
 
   open(): void {
     this.isOpen = true;
+    document.documentElement.classList.add('dialog-is-open');
   }
 
   close(): void {
     this.isOpen = false;
+    document.documentElement.classList.remove('dialog-is-open');
   }
 
   confirm(): void {

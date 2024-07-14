@@ -37,7 +37,7 @@ export class AppComponent {
 
   // Data for the table
 
-  tableHeaders = [
+  measurementHeaders = [
     'Дата',
     'Время',
     'Источник',
@@ -49,8 +49,9 @@ export class AppComponent {
     'coѕ ф',
   ];
 
-  tableData = [
+  measurements = [
     {
+      id: 1,
       date: '30.07.2022',
       time: '10:15:23',
       source: 'Оператор',
@@ -63,6 +64,7 @@ export class AppComponent {
     },
 
     {
+      id: 2,
       date: '30.07.2022',
       time: '10:08:44',
       source: 'Оператор',
@@ -75,6 +77,7 @@ export class AppComponent {
     },
 
     {
+      id: 3,
       date: '29.07.2022',
       time: '15:08:44',
       source: 'Оператор',
@@ -87,6 +90,7 @@ export class AppComponent {
     },
 
     {
+      id: 4,
       date: '12.06.2022',
       time: '10:28:02',
       source: 'SCADA',
@@ -99,6 +103,7 @@ export class AppComponent {
     },
 
     {
+      id: 5,
       date: '05.05.2022',
       time: '13:56:39',
       source: 'АСКУЭ',
@@ -111,6 +116,7 @@ export class AppComponent {
     },
 
     {
+      id: 6,
       date: '05.05.2022',
       time: '13:56:39',
       source: 'АСКУЭ',
@@ -123,6 +129,7 @@ export class AppComponent {
     },
 
     {
+      id: 7,
       date: '02.03.2022',
       time: '17:43:51',
       source: 'Регистратор',
@@ -134,6 +141,8 @@ export class AppComponent {
       cos: '0.65',
     },
   ];
+
+
 
   // Data for the list
 
@@ -189,10 +198,9 @@ export class AppComponent {
 
   // Variables
 
+  selectedMeasurement: any;
   selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
-
   selectedEquipmentType: string = 'transformator';
-
   selectedRU: string = 'RU1';
 
   // Check if a measurement is checked
@@ -207,13 +215,32 @@ export class AppComponent {
     measurement.checked = !measurement.checked;
   }
 
-  // addNewMeasurement(measurement: any) {
-  //   this.tableData.unshift(measurement);
-  // }
-
-  addNewMeasurement(measurements: any) {
-    this.tableData.push(measurements);
+  addNewMeasurement(measurement: any) {
+    this.measurements.push(measurement);
   }
+
+  selectMeasurement(measurement: any) {
+    this.selectedMeasurement = measurement;
+  }
+
+  getSelectedMeasurementId() {
+    return this.selectedMeasurement?.id;
+  }
+
+  removeMeasurement() {
+    if (this.selectedMeasurement.id) {
+      const measurementToRemove = this.measurements.find(measurement => measurement.id === this.selectedMeasurement.id);
+
+      if (measurementToRemove) {
+        this.measurements = this.measurements.filter(measurement => measurement.id !== this.selectedMeasurement.id);
+
+        // Send a request to the backend to delete the measurement (if necessary)
+        // this.http.delete(`https://example.com/api/measurements/${this.selectedMeasurementId}`)
+        //   .subscribe(() => console.log('Measurement deleted successfully'));
+      }
+    }
+  }
+
 
   @ViewChild('dialog') dialog: DialogComponent | undefined;
 

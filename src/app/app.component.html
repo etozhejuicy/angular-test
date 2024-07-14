@@ -61,7 +61,7 @@
         </div>
 
         <div class="left-panel-options">
-          <div class="row g-3 align-items-center">
+          <div class="row g-3 align-items-start align-items-md-center">
             <div class="col">
               <div class="list-options">
                 <div class="list-option">
@@ -173,7 +173,7 @@
                 </button>
               </div>
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored">
+                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored" (click)="removeMeasurement()">
                   <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                     focusable="false">
                     <use xlink:href="/sprite.svg#delete"></use>
@@ -234,7 +234,7 @@
               <th class="form-check-primary">
                 <input type="checkbox" class="form-check-input" />
               </th>
-              <th *ngFor="let header of tableHeaders">{{ header }}</th>
+              <th *ngFor="let header of measurementHeaders">{{ header }}</th>
             </tr>
           </thead>
 
@@ -251,28 +251,28 @@
                 </div>
               </td>
             </tr>
-            <tr *ngFor="let item of tableData">
+            <tr *ngFor="let measurement of measurements">
               <td class="form-check-primary">
-                <input class="form-check-input" type="checkbox" [checked]="isChecked(item)"
-                  (click)="toggleCheck(item)" />
+                <input class="form-check-input" type="checkbox" [checked]="isChecked(measurement)"
+                  (click)="selectMeasurement(measurement)" />
               </td>
-              <td>{{ item.date }}</td>
+              <td>{{ measurement.date }}</td>
 
-              <td>{{ item.time }}</td>
+              <td>{{ measurement.time }}</td>
 
-              <td>{{ item.source }}</td>
+              <td>{{ measurement.source }}</td>
 
-              <td>{{ item.phase }}</td>
+              <td>{{ measurement.phase }}</td>
 
-              <td>{{ item.u }}</td>
+              <td>{{ measurement.u }}</td>
 
-              <td>{{ item.i }}</td>
+              <td>{{ measurement.i }}</td>
 
-              <td>{{ item.p }}</td>
+              <td>{{ measurement.p }}</td>
 
-              <td>{{ item.q }}</td>
+              <td>{{ measurement.q }}</td>
 
-              <td>{{ item.cos }}</td>
+              <td>{{ measurement.cos }}</td>
             </tr>
           </tbody>
         </table>
