@@ -26,9 +26,7 @@ import '../js/modules/resizer.js';
   ],
 
   selector: 'app-root',
-
   templateUrl: './app.component.html',
-
   styleUrls: [
     './app.component.scss',
     './header/header.component.scss',
@@ -39,8 +37,7 @@ import '../js/modules/resizer.js';
 export class AppComponent {
   title = 'monitor-app';
 
-  // Data for the table
-
+  // Data of the table headers
   measurementHeaders = [
     'Дата',
     'Время',
@@ -53,6 +50,7 @@ export class AppComponent {
     'coѕ ф',
   ];
 
+  // Data of the table
   measurements = [
     {
       id: 1,
@@ -146,12 +144,10 @@ export class AppComponent {
     },
   ];
 
-
-
-  // Data for the list
-
+  // Data of the list headers
   listHeaders = ['Наименование', 'U ном.'];
 
+  // Data of the list
   listData = [
     { name: 'PTCH\\HH-1', u: '6' },
 
@@ -162,8 +158,7 @@ export class AppComponent {
     { name: 'БТ-1\\ВН', u: '110' },
   ];
 
-  // Substations
-
+  // list of substations
   substations: any = [
     { id: 0, value: 'Выберите подстанцию' },
     { id: 1, value: 'ТЭЦ ПГУ ГСР Энерго' },
@@ -173,8 +168,7 @@ export class AppComponent {
     { id: 5, value: 'Подстанция 5' },
   ];
 
-  // equipment
-
+  // list of equipment
   equipment: any = [
     { name: '', value: 'Выберите оборудование' },
     { name: 'tr1', value: 'Трансформатор 1' },
@@ -184,53 +178,53 @@ export class AppComponent {
     { name: 'tr5', value: 'Трансформатор 5' },
   ];
 
-  // Equipment Types
-
+  // list of equipment types
   equipmentTypes: any = [
     { name: '', value: 'Выберите тип' },
     { name: 'transformator', value: 'Трансформаторы' },
     { name: 'generator', value: 'Генераторы' },
   ];
 
-  // RU Values
-
+  // list of RU
   ruValues: any = [
     { name: '', value: 'Выберите РУ' },
     { name: 'RU1', value: 'РУ 1' },
     { name: 'RU2', value: 'РУ 2' },
   ];
 
-  // Variables
-
+  // Set the vars
   selectedMeasurement: any;
   selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
   selectedEquipmentType: string = 'transformator';
   selectedRU: string = 'RU1';
 
-  // Check if a measurement is checked
 
+  // Check if a measurement is checked
   isChecked(measurement: any) {
     return measurement.checked;
   }
 
   // Toggle checked state of a measurement
-
   toggleCheck(measurement: any) {
     measurement.checked = !measurement.checked;
   }
 
+  // add New Measurement
   addNewMeasurement(measurement: any) {
     this.measurements.push(measurement);
   }
 
+  // Select Measurement
   selectMeasurement(measurement: any) {
     this.selectedMeasurement = measurement;
   }
 
+  // get Selected Measurement
   getSelectedMeasurementId() {
     return this.selectedMeasurement?.id;
   }
 
+  // remove Measurement
   removeMeasurement() {
     if (this.selectedMeasurement.id) {
       const measurementToRemove = this.measurements.find(measurement => measurement.id === this.selectedMeasurement.id);
@@ -241,11 +235,12 @@ export class AppComponent {
     }
   }
 
-
+  // check dialogs
   @ViewChild('dialog') dialog: DialogComponent | undefined;
   @ViewChild('dialogForm') dialogForm: DialogFormComponent | undefined;
   @ViewChild('dialogEdit') dialogEdit: DialogEditComponent | undefined;
 
+  // callback dialogs
   openDialog() {
     if (this.dialog) {
       this.dialog.open();

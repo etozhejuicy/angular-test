@@ -39,4 +39,22 @@
     width: 4.963rem;
     height: 2.875rem;
   }
+  &-navigation {
+    & * {
+      &:is(.btn) {
+        --cl-btn-padding-x: 1rem;
+        --cl-btn-padding-y: 0.625rem;
+        --cl-btn-font-size: 1.125rem;
+        --cl-btn-size: 1.5rem;
+      }
+    }
+    &-view {
+      & * {
+        &:is(.btn) {
+          --cl-btn-padding-x: 0.5rem;
+          --cl-btn-padding-y: 0.375rem;
+        }
+      }
+    }
+  }
 }

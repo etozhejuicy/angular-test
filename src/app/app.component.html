@@ -21,7 +21,7 @@
           </app-dialog>
 
           <span> > </span>
-          <span>{{ selectedSubstation }}</span>
+          <span class="left-panel-selected">{{ selectedSubstation }}</span>
         </div>
         <div class="left-panel-state">
           <button class="btn btn-sm btn-icon btn-primary">
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="col-auto">
-              <div class="form-check form-switch form-switch-primary">
+              <div class="form-check form-switch form-switch-secondary form-switch-colored">
                 <input class="form-check-input" type="checkbox" value="" role="switch" id="scheme" />
                 <label class="form-check-label" for="scheme"> Схема </label>
               </div>
@@ -141,9 +141,9 @@
         </div>
       </div>
 
-      <div class="right-panel-actions">
+      <div class="right-panel-buttons">
         <div class="row g-3">
-          <div class="col">
+          <div class="col right-panel-actions">
             <div class="row g-3">
               <div class="col-auto">
                 <button class="btn btn-sm btn-icon btn-outline-primary btn-colored">
@@ -186,7 +186,7 @@
               </div>
             </div>
           </div>
-          <div class="col-auto">
+          <div class="col-auto right-panel-view">
             <div class="row g-3">
               <div class="col-auto">
                 <div class="btn-group">
@@ -204,7 +204,7 @@
                   </button>
                 </div>
               </div>
-              <div class="col-auto">
+              <div class="col-auto right-panel-fullscreen">
                 <button class="btn btn-sm btn-icon btn-outline-grey">
                   <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                     focusable="false">
@@ -235,7 +235,9 @@
           <thead>
             <tr>
               <th class="form-check-primary">
-                <input type="checkbox" class="form-check-input" />
+                <div class="form-check form-check-single">
+                  <input type="checkbox" class="form-check-input" />
+                </div>
               </th>
               <th *ngFor="let header of measurementHeaders">{{ header }}</th>
             </tr>
@@ -244,8 +246,18 @@
           <tbody>
             <tr>
               <td colspan="10">
-                <div class="table-title text-primary" (click)="openDialogForm()">
-                  + Добавить новые замеры
+                <div class="table-title text-primary pl-1" (click)="openDialogForm()">
+                  <div class="row g-2 flex-nowrap align-items-center">
+                    <div class="col-auto">
+                      <svg width="0.875rem" height="0.875rem" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true" focusable="false">
+                        <use xlink:href="/sprite.svg#plus"></use>
+                      </svg>
+                    </div>
+                    <div class="col-auto">
+                      Добавить новые замеры
+                    </div>
+                  </div>
                 </div>
                 <app-dialog-form #dialogForm title="Добавить новые замеры">
                   <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
@@ -254,8 +266,10 @@
             </tr>
             <tr *ngFor="let measurement of measurements">
               <td class="form-check-primary">
-                <input class="form-check-input" type="checkbox" [checked]="isChecked(measurement)"
-                  (click)="selectMeasurement(measurement)" />
+                <div class="form-check form-check-single">
+                  <input class="form-check-input" type="checkbox" [checked]="isChecked(measurement)"
+                    (click)="selectMeasurement(measurement)" />
+                </div>
               </td>
               <td>{{ measurement.date }}</td>
 

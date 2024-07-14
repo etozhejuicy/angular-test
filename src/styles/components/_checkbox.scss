@@ -134,6 +134,17 @@
       }
     }
   }
+  &-single {
+    width: fit-content;
+    min-height: unset;
+    margin: unset;
+    padding: unset;
+    & .form-check-input {
+      float: unset;
+      margin: unset;
+      padding: unset;
+    }
+  }
 }
 
 @each $color, $value in $colors {
