@@ -233,10 +233,6 @@ export class AppComponent {
 
       if (measurementToRemove) {
         this.measurements = this.measurements.filter(measurement => measurement.id !== this.selectedMeasurement.id);
-
-        // Send a request to the backend to delete the measurement (if necessary)
-        // this.http.delete(`https://example.com/api/measurements/${this.selectedMeasurementId}`)
-        //   .subscribe(() => console.log('Measurement deleted successfully'));
       }
     }
   }
