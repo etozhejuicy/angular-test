@@ -164,13 +164,16 @@
                 </button>
               </div>
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored">
+                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored" (click)="openDialogEdit()">
                   <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
                     focusable="false">
                     <use xlink:href="/sprite.svg#edit"></use>
                   </svg>
                   <span class="btn-icon-text"> Редактировать </span>
                 </button>
+                <app-dialog-edit #dialogEdit title="Редактировать данные">
+                  123
+                </app-dialog-edit>
               </div>
               <div class="col-auto">
                 <button class="btn btn-sm btn-icon btn-outline-primary btn-colored" (click)="removeMeasurement()">
@@ -241,14 +244,12 @@
           <tbody>
             <tr>
               <td colspan="10">
-                <div data-collapse-id="measurement_form">
-                  <div class="table-title text-primary" data-collapse-toggle="measurement_form">
-                    + Добавить новые замеры
-                  </div>
-                  <div class="collapse">
-                    <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
-                  </div>
+                <div class="table-title text-primary" (click)="openDialogForm()">
+                  + Добавить новые замеры
                 </div>
+                <app-dialog-form #dialogForm title="Добавить новые замеры">
+                  <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
+                </app-dialog-form>
               </td>
             </tr>
             <tr *ngFor="let measurement of measurements">

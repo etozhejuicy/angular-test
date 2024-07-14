@@ -4,6 +4,8 @@ import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
 import { ButtonComponent } from './button/button.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { DialogFormComponent } from './dialog-form/dialog-form.component';
+import { DialogEditComponent } from './dialog-edit/dialog-edit.component';
 
 // js-solutions
 import '../js/modules/jquery.js';
@@ -19,6 +21,8 @@ import '../js/modules/resizer.js';
     HeaderComponent,
     MeasurementFormComponent,
     DialogComponent,
+    DialogFormComponent,
+    DialogEditComponent
   ],
 
   selector: 'app-root',
@@ -239,6 +243,8 @@ export class AppComponent {
 
 
   @ViewChild('dialog') dialog: DialogComponent | undefined;
+  @ViewChild('dialogForm') dialogForm: DialogFormComponent | undefined;
+  @ViewChild('dialogEdit') dialogEdit: DialogEditComponent | undefined;
 
   openDialog() {
     if (this.dialog) {
@@ -246,9 +252,33 @@ export class AppComponent {
     }
   }
 
+  openDialogForm() {
+    if (this.dialogForm) {
+      this.dialogForm.open();
+    }
+  }
+
+  openDialogEdit() {
+    if (this.dialogEdit) {
+      this.dialogEdit.open();
+    }
+  }
+
   closeDialog() {
     if (this.dialog) {
       this.dialog.close();
+    }
+  }
+
+  closeDialogForm() {
+    if (this.dialogForm) {
+      this.dialogForm.close();
+    }
+  }
+
+  closeDialogEdit() {
+    if (this.dialogEdit) {
+      this.dialogEdit.close();
     }
   }
 }
