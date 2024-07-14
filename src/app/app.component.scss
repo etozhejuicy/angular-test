@@ -36,11 +36,15 @@
   }
   &-header {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: space-between;
     row-gap: var(--right-panel-gap);
     column-gap: var(--right-panel-gap);
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
   }
   &-action {
     display: flex;
@@ -210,7 +214,9 @@
     row-gap: 0.625rem;
     column-gap: 0.625rem;
     & .form-select {
-      --cl-form-select-padding-right: calc(var(--cl-form-select-bg-size) + 1.875rem);
+      --cl-form-select-padding-right: calc(
+        var(--cl-form-select-bg-size) + 1.875rem
+      );
     }
   }
 }

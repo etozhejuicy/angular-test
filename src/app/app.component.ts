@@ -1,4 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { NgFor } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { MeasurementFormComponent } from './measurement-form/measurement-form.component';
@@ -32,6 +38,8 @@ import '../js/modules/resizer.js';
     './header/header.component.scss',
     './button/button.component.scss',
     './dialog/dialog.component.scss',
+    './dialog-form/dialog-form.component.scss',
+    './dialog-edit/dialog-edit.component.scss',
   ],
 })
 export class AppComponent {
@@ -201,11 +209,46 @@ export class AppComponent {
 
   // Set the vars
   selectedMeasurement: any;
-  collectedMeasurements: any[] = [];
+  selectedMeasurements = this.measurements;
   selectAll: boolean = false;
   selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
   selectedEquipmentType: string = 'transformator';
   selectedRU: string = 'RU1';
+
+  // Sort
+  sortDirection = 'asc';
+
+  sortedColumn = '';
+
+  toggleSort(column: string) {
+    if (this.sortedColumn === column) {
+      this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
+    } else {
+      this.sortedColumn = column;
+
+      this.sortDirection = 'asc';
+    }
+
+    this.sortMeasurements();
+  }
+
+  sortMeasurements() {
+    if (this.sortedColumn === 'date') {
+      this.measurements.sort((a, b) => {
+        const dateA = a.date.split('.').map(Number);
+        const dateB = b.date.split('.').map(Number);
+        if (this.sortDirection === 'asc') {
+          if (dateA[2] !== dateB[2]) return dateA[2] - dateB[2];
+          if (dateA[1] !== dateB[1]) return dateA[1] - dateB[1];
+          return dateA[0] - dateB[0]; // day
+        } else {
+          if (dateA[2] !== dateB[2]) return dateB[2] - dateA[2];
+          if (dateA[1] !== dateB[1]) return dateB[1] - dateA[1];
+          return dateB[0] - dateA[0]; // day
+        }
+      });
+    }
+  }
 
   // Check if a measurement is checked
   isChecked(measurement: any) {
@@ -214,12 +257,9 @@ export class AppComponent {
 
   // Toggle checked state of a measurement
   toggleSelect(measurement: any) {
-    // measurement.checked = !measurement.checked;
-    if (measurement.selected) {
-      measurement.selected = false;
-    } else {
-      measurement.selected = true;
-    }
+    measurement.selected
+      ? (measurement.selected = false)
+      : (measurement.selected = true);
 
     return this.selectedMeasurement;
   }
@@ -247,8 +287,40 @@ export class AppComponent {
 
   // edit Measurement fuinction
   editMeasurement() {
-    this.openDialogEdit();
-    this.measurements;
+    this.selectedMeasurements = this.measurements.filter((m) => m.selected);
+    if (
+      this.selectedMeasurements.length > 0 &&
+      this.selectedMeasurements.length < 2
+    ) {
+      this.openDialogEdit();
+    }
+  }
+
+  // Save Current Selected Measurement
+  @ViewChildren('measurementInput') measurementInputs!: QueryList<ElementRef>;
+
+  saveMeasurementChanges(measurement: any) {
+    measurement.selected = false;
+
+    const inputValues = this.measurementInputs.map(
+      (input) => input.nativeElement.value
+    );
+
+    if (inputValues.length > 0) {
+      this.selectedMeasurements.forEach((measurement, measurementIndex) => {
+        const inputValue = inputValues[measurementIndex];
+
+        measurement.source = inputValue;
+        measurement.phase = inputValue;
+        measurement.u = inputValue;
+        measurement.i = inputValue;
+        measurement.p = inputValue;
+        measurement.q = inputValue;
+        measurement.cos = inputValue;
+      });
+    }
+
+    console.log('Selected measurements updated:', this.selectedMeasurements);
   }
 
   // remove Measurement

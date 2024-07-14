@@ -46,6 +46,12 @@
         --cl-btn-padding-y: 0.625rem;
         --cl-btn-font-size: 1.125rem;
         --cl-btn-size: 1.5rem;
+        & > svg {
+          display: none;
+          @media (min-width: 768px) {
+            display: flex;
+          }
+        }
       }
     }
     &-view {

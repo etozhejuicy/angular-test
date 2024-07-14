@@ -36,4 +36,10 @@ export class DialogEditComponent {
     this.cancelEvent.emit();
     this.close();
   }
+
+  saveChanges() {
+    this.confirmEvent.emit();
+    this.close();
+    console.log('Saving changes to:');
+  }
 }

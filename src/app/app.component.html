@@ -34,7 +34,7 @@
           <span class="left-panel-selected">{{ selectedSubstation }}</span>
         </div>
         <div class="left-panel-state">
-          <button class="btn btn-sm btn-icon btn-primary">
+          <button class="btn btn-sm btn-icon btn-primary w-xs-100 w-sm-100">
             <svg
               width="1rem"
               height="1rem"
@@ -248,7 +248,101 @@
                   <span class="btn-icon-text"> Редактировать </span>
                 </button>
                 <app-dialog-edit #dialogEdit title="Редактировать данные">
-                  Edit modal create...
+                  <form
+                    class="dialog-edit mt-2"
+                    (ngSubmit)="saveMeasurementChanges(selectedMeasurement)"
+                  >
+                    <div class="dialog-edit-content">
+                      <div
+                        class="dialog-edit-fields"
+                        *ngFor="
+                          let measurement of selectedMeasurements;
+                          let i = index
+                        "
+                      >
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="Источник"
+                          id="sourceSelectedEdit"
+                          [value]="selectedMeasurement?.source"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="Фаза"
+                          id="phaseSelectedEdit"
+                          [value]="selectedMeasurement?.phase"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="U, kB"
+                          id="uSelectedEdit"
+                          [value]="selectedMeasurement?.u"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="I, A"
+                          id="iSelectedEdit"
+                          [value]="selectedMeasurement?.i"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="Р, МВт"
+                          id="pSelectedEdit"
+                          [value]="selectedMeasurement?.p"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="Q, Мвар"
+                          id="qSelectedEdit"
+                          [value]="selectedMeasurement?.q"
+                          #measurementInput
+                        />
+
+                        <input
+                          class="form-control form-control-grey w-100"
+                          type="text"
+                          placeholder="coѕ ф"
+                          id="cosSelectedEdit"
+                          [value]="selectedMeasurement?.cos"
+                          #measurementInput
+                        />
+                      </div>
+                      <div class="dialog-edit-actions">
+                        <button
+                          class="btn btn-primary btn-icon"
+                          (click)="saveMeasurementChanges(selectedMeasurement)"
+                        >
+                          <svg
+                            width="1rem"
+                            height="1rem"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true"
+                            focusable="false"
+                          >
+                            <use xlink:href="/sprite.svg#save"></use>
+                          </svg>
+                          <span class="btn-icon-text"> Сохранить </span>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </app-dialog-edit>
               </div>
               <div class="col-auto">
@@ -332,6 +426,7 @@
             value=""
             role="switch"
             id="group-by-date"
+            (change)="toggleSort('date')"
           />
           <label class="form-check-label" for="group-by-date">
             Группировать по дате
