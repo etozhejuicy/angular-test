@@ -22,7 +22,7 @@ import '../js/modules/resizer.js';
     MeasurementFormComponent,
     DialogComponent,
     DialogFormComponent,
-    DialogEditComponent
+    DialogEditComponent,
   ],
 
   selector: 'app-root',
@@ -63,6 +63,7 @@ export class AppComponent {
       p: '-',
       q: '-',
       cos: '-',
+      selected: false,
     },
 
     {
@@ -76,6 +77,7 @@ export class AppComponent {
       p: '-',
       q: '-',
       cos: '-',
+      selected: false,
     },
 
     {
@@ -89,6 +91,7 @@ export class AppComponent {
       p: '3',
       q: '0.7',
       cos: '0.67',
+      selected: false,
     },
 
     {
@@ -102,6 +105,7 @@ export class AppComponent {
       p: '2.756',
       q: '0.9',
       cos: '0.83',
+      selected: false,
     },
 
     {
@@ -115,6 +119,7 @@ export class AppComponent {
       p: '3.143',
       q: '0.78',
       cos: '0.67',
+      selected: false,
     },
 
     {
@@ -128,6 +133,7 @@ export class AppComponent {
       p: '3.143',
       q: '0.78',
       cos: '0.67',
+      selected: false,
     },
 
     {
@@ -141,6 +147,7 @@ export class AppComponent {
       p: '3.343',
       q: '0.76',
       cos: '0.65',
+      selected: false,
     },
   ];
 
@@ -194,10 +201,11 @@ export class AppComponent {
 
   // Set the vars
   selectedMeasurement: any;
+  collectedMeasurements: any[] = [];
+  selectAll: boolean = false;
   selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
   selectedEquipmentType: string = 'transformator';
   selectedRU: string = 'RU1';
-
 
   // Check if a measurement is checked
   isChecked(measurement: any) {
@@ -205,8 +213,21 @@ export class AppComponent {
   }
 
   // Toggle checked state of a measurement
-  toggleCheck(measurement: any) {
-    measurement.checked = !measurement.checked;
+  toggleSelect(measurement: any) {
+    // measurement.checked = !measurement.checked;
+    if (measurement.selected) {
+      measurement.selected = false;
+    } else {
+      measurement.selected = true;
+    }
+
+    return this.selectedMeasurement;
+  }
+
+  toggleSelectAll(event: any) {
+    const selectAll = event.target.checked;
+
+    this.measurements.forEach((m) => (m.selected = selectAll));
   }
 
   // add New Measurement
@@ -224,15 +245,15 @@ export class AppComponent {
     return this.selectedMeasurement?.id;
   }
 
+  // edit Measurement fuinction
+  editMeasurement() {
+    this.openDialogEdit();
+    this.measurements;
+  }
+
   // remove Measurement
   removeMeasurement() {
-    if (this.selectedMeasurement.id) {
-      const measurementToRemove = this.measurements.find(measurement => measurement.id === this.selectedMeasurement.id);
-
-      if (measurementToRemove) {
-        this.measurements = this.measurements.filter(measurement => measurement.id !== this.selectedMeasurement.id);
-      }
-    }
+    this.measurements = this.measurements.filter((m) => !m.selected);
   }
 
   // check dialogs

@@ -6,9 +6,19 @@
     <aside class="left-panel">
       <div class="left-panel-header">
         <div class="left-panel-action">
-          <button class="btn btn-sm btn-icon btn-outline-grey" (click)="openDialog()" type="button">
-            <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-              focusable="false">
+          <button
+            class="btn btn-sm btn-icon btn-outline-grey"
+            (click)="openDialog()"
+            type="button"
+          >
+            <svg
+              width="1rem"
+              height="1rem"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
               <use xlink:href="/sprite.svg#hamburger"></use>
             </svg>
             <span class="btn-icon-text">Подстанции</span>
@@ -25,8 +35,14 @@
         </div>
         <div class="left-panel-state">
           <button class="btn btn-sm btn-icon btn-primary">
-            <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-              focusable="false">
+            <svg
+              width="1rem"
+              height="1rem"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              focusable="false"
+            >
               <use xlink:href="/sprite.svg#save"></use>
             </svg>
             <span class="btn-icon-text"> Сохранить </span>
@@ -52,7 +68,10 @@
 
       <div class="list-container">
         <div class="btn-group">
-          <button type="button" class="btn btn-sm btn-icon btn-outline-grey active">
+          <button
+            type="button"
+            class="btn btn-sm btn-icon btn-outline-grey active"
+          >
             Список
           </button>
           <button type="button" class="btn btn-sm btn-icon btn-outline-grey">
@@ -67,7 +86,10 @@
                 <div class="list-option">
                   <label for="equipmentTypes">Тип</label>
                   <select class="form-select" id="equipmentTypes">
-                    <option value="{{ item.name }}" *ngFor="let item of equipmentTypes">
+                    <option
+                      value="{{ item.name }}"
+                      *ngFor="let item of equipmentTypes"
+                    >
                       {{ item.value }}
                     </option>
                   </select>
@@ -76,7 +98,10 @@
                 <div class="list-option">
                   <label for="ruValues">РУ</label>
                   <select class="form-select" id="ruValues">
-                    <option value="{{ item.name }}" *ngFor="let item of ruValues">
+                    <option
+                      value="{{ item.name }}"
+                      *ngFor="let item of ruValues"
+                    >
                       {{ item.value }}
                     </option>
                   </select>
@@ -84,8 +109,16 @@
               </div>
             </div>
             <div class="col-auto">
-              <div class="form-check form-switch form-switch-secondary form-switch-colored">
-                <input class="form-check-input" type="checkbox" value="" role="switch" id="scheme" />
+              <div
+                class="form-check form-switch form-switch-secondary form-switch-colored"
+              >
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value=""
+                  role="switch"
+                  id="scheme"
+                />
                 <label class="form-check-label" for="scheme"> Схема </label>
               </div>
             </div>
@@ -116,16 +149,34 @@
     <aside class="resizer resizer-x">
       <div class="resizer-container">
         <div class="resizer-icon">
-          <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            focusable="false">
+          <svg
+            width="1rem"
+            height="1rem"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
-          <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            focusable="false">
+          <svg
+            width="1rem"
+            height="1rem"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
-          <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            focusable="false">
+          <svg
+            width="1rem"
+            height="1rem"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
+          >
             <use xlink:href="/sprite.svg#dragToMove"></use>
           </svg>
         </div>
@@ -146,39 +197,73 @@
           <div class="col right-panel-actions">
             <div class="row g-3">
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored">
-                  <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                    focusable="false">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <use xlink:href="/sprite.svg#certificate"></use>
                   </svg>
                   <span class="btn-icon-text">Проверить</span>
                 </button>
               </div>
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored">
-                  <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                    focusable="false">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                >
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <use xlink:href="/sprite.svg#cancel"></use>
                   </svg>
                   <span class="btn-icon-text"> Отменить проверку </span>
                 </button>
               </div>
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored" (click)="openDialogEdit()">
-                  <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                    focusable="false">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                  (click)="editMeasurement()"
+                >
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <use xlink:href="/sprite.svg#edit"></use>
                   </svg>
                   <span class="btn-icon-text"> Редактировать </span>
                 </button>
                 <app-dialog-edit #dialogEdit title="Редактировать данные">
-                  123
+                  Edit modal create...
                 </app-dialog-edit>
               </div>
               <div class="col-auto">
-                <button class="btn btn-sm btn-icon btn-outline-primary btn-colored" (click)="removeMeasurement()">
-                  <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                    focusable="false">
+                <button
+                  class="btn btn-sm btn-icon btn-outline-primary btn-colored"
+                  (click)="removeMeasurement()"
+                >
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <use xlink:href="/sprite.svg#delete"></use>
                   </svg>
                   <span class="btn-icon-text"> Удалить </span>
@@ -191,14 +276,26 @@
               <div class="col-auto">
                 <div class="btn-group">
                   <button class="btn btn-sm btn-icon btn-outline-grey active">
-                    <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                      focusable="false">
+                    <svg
+                      width="1rem"
+                      height="1rem"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
                       <use xlink:href="/sprite.svg#vertical"></use>
                     </svg>
                   </button>
                   <button class="btn btn-sm btn-icon btn-outline-grey">
-                    <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                      focusable="false">
+                    <svg
+                      width="1rem"
+                      height="1rem"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true"
+                      focusable="false"
+                    >
                       <use xlink:href="/sprite.svg#horizontal"></use>
                     </svg>
                   </button>
@@ -206,8 +303,14 @@
               </div>
               <div class="col-auto right-panel-fullscreen">
                 <button class="btn btn-sm btn-icon btn-outline-grey">
-                  <svg width="1rem" height="1rem" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                    focusable="false">
+                  <svg
+                    width="1rem"
+                    height="1rem"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
                     <use xlink:href="/sprite.svg#expand"></use>
                   </svg>
                 </button>
@@ -223,7 +326,13 @@
         </div>
 
         <div class="form-check form-switch form-switch-primary">
-          <input class="form-check-input" type="checkbox" value="" role="switch" id="group-by-date" />
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            role="switch"
+            id="group-by-date"
+          />
           <label class="form-check-label" for="group-by-date">
             Группировать по дате
           </label>
@@ -236,7 +345,11 @@
             <tr>
               <th class="form-check-primary">
                 <div class="form-check form-check-single">
-                  <input type="checkbox" class="form-check-input" />
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    (change)="toggleSelectAll($event)"
+                  />
                 </div>
               </th>
               <th *ngFor="let header of measurementHeaders">{{ header }}</th>
@@ -246,29 +359,43 @@
           <tbody>
             <tr>
               <td colspan="10">
-                <div class="table-title text-primary pl-1" (click)="openDialogForm()">
+                <div
+                  class="table-title text-primary pl-1"
+                  (click)="openDialogForm()"
+                >
                   <div class="row g-2 flex-nowrap align-items-center">
                     <div class="col-auto">
-                      <svg width="0.875rem" height="0.875rem" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        aria-hidden="true" focusable="false">
+                      <svg
+                        width="0.875rem"
+                        height="0.875rem"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
                         <use xlink:href="/sprite.svg#plus"></use>
                       </svg>
                     </div>
-                    <div class="col-auto">
-                      Добавить новые замеры
-                    </div>
+                    <div class="col-auto">Добавить новые замеры</div>
                   </div>
                 </div>
                 <app-dialog-form #dialogForm title="Добавить новые замеры">
-                  <app-measurement-form (newMeasurement)="addNewMeasurement($event)"></app-measurement-form>
+                  <app-measurement-form
+                    (newMeasurement)="addNewMeasurement($event)"
+                  ></app-measurement-form>
                 </app-dialog-form>
               </td>
             </tr>
             <tr *ngFor="let measurement of measurements">
               <td class="form-check-primary">
                 <div class="form-check form-check-single">
-                  <input class="form-check-input" type="checkbox" [checked]="isChecked(measurement)"
-                    (click)="selectMeasurement(measurement)" />
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    [checked]="isChecked(measurement)"
+                    (change)="toggleSelect(measurement)"
+                    (click)="selectMeasurement(measurement)"
+                  />
                 </div>
               </td>
               <td>{{ measurement.date }}</td>

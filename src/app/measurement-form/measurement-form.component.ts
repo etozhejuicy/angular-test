@@ -27,6 +27,7 @@ export class MeasurementFormComponent {
     const p = (document.getElementById('p') as HTMLInputElement).value;
     const q = (document.getElementById('q') as HTMLInputElement).value;
     const cos = (document.getElementById('cos') as HTMLInputElement).value;
+    const selected = false;
 
     const newMeasurement = {
       date,
@@ -38,6 +39,7 @@ export class MeasurementFormComponent {
       p,
       q,
       cos,
+      selected,
     };
     this.newMeasurement.emit(newMeasurement);
   }
