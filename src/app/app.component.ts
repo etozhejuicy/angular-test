@@ -298,6 +298,61 @@ export class AppComponent {
 
   // Save Current Selected Measurement
   @ViewChildren('measurementInput') measurementInputs!: QueryList<ElementRef>;
+  // @ViewChildren('inputElements') inputList?: QueryList<ElementRef>;
+
+  // saveMeasurementChanges(measurement: any) {
+  //   const inputValues: { [key: string]: string[] } = {};
+
+  //   for (const key of Object.keys(this.measurementInputs)) {
+  //     const inputList = this.measurementInputs.find(
+  //       (_, index) => index === Number(key)
+  //     );
+
+  //     if (this.inputList) {
+  //       inputValues[key] = this.inputList
+  //         .toArray()
+  //         .map((input) => input.nativeElement.value);
+  //     }
+  //   }
+
+  //   // Update measurements
+
+  //   const measurementIndices = new Map<
+  //     {
+  //       id: number;
+  //       date: string;
+  //       time: string;
+  //       source: string;
+  //       phase: string;
+  //       u: string;
+  //       i: string;
+  //       p: string;
+  //       q: string;
+  //       cos: string;
+  //       selected: boolean;
+  //     },
+  //     number
+  //   >();
+
+  //   this.selectedMeasurements.forEach((measurement, index) => {
+  //     measurementIndices.set(measurement, index);
+
+  //     const newMeasurement: { [key: string]: any } = {};
+  //     for (const key of Object.keys(inputValues)) {
+  //       if (
+  //         key in measurement &&
+  //         Array.isArray(inputValues[key]) &&
+  //         inputValues[key].length > index
+  //       ) {
+  //         newMeasurement[key] = inputValues[key][index];
+  //       } else {
+  //         console.warn(
+  //           `Skipping key ${key} because it's not a valid property of measurement or inputValues[key] is not a long enough array`
+  //         );
+  //       }
+  //     }
+  //   });
+  // }
 
   saveMeasurementChanges(measurement: any) {
     measurement.selected = false;
