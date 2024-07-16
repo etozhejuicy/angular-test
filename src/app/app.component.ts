@@ -223,6 +223,7 @@ export class AppComponent {
   // Selected substations
   selectSubstation(substation: any) {
     this.selectedSubstation = substation;
+    this.closeDialog();
   }
 
   toggleSort(column: string) {
@@ -269,6 +270,7 @@ export class AppComponent {
     return this.selectedMeasurement;
   }
 
+  // Toggle checked state for all measurements
   toggleSelectAll(event: any) {
     const selectAll = event.target.checked;
 
@@ -314,19 +316,45 @@ export class AppComponent {
     if (inputValues.length > 0) {
       this.selectedMeasurements.forEach((measurement, measurementIndex) => {
         const inputValue = inputValues[measurementIndex];
-
-        measurement.source = inputValue;
-        measurement.phase = inputValue;
-        measurement.u = inputValue;
-        measurement.i = inputValue;
-        measurement.p = inputValue;
-        measurement.q = inputValue;
-        measurement.cos = inputValue;
+        measurement = {
+          ...measurement,
+          source: inputValue,
+          phase: inputValue,
+          u: inputValue,
+          i: inputValue,
+          p: inputValue,
+          q: inputValue,
+          cos: inputValue,
+        };
       });
     }
 
     console.log('Selected measurements updated:', this.selectedMeasurements);
   }
+
+  // saveMeasurementChanges(measurement: any) {
+  //   measurement.selected = false;
+
+  //   const inputValues = this.measurementInputs.map(
+  //     (input) => input.nativeElement.value
+  //   );
+
+  //   if (inputValues.length > 0) {
+  //     this.selectedMeasurements.forEach((measurement, measurementIndex) => {
+  //       const inputValue = inputValues[measurementIndex];
+
+  //       measurement.source = inputValue;
+  //       measurement.phase = inputValue;
+  //       measurement.u = inputValue;
+  //       measurement.i = inputValue;
+  //       measurement.p = inputValue;
+  //       measurement.q = inputValue;
+  //       measurement.cos = inputValue;
+  //     });
+  //   }
+
+  //   console.log('Selected measurements updated:', this.selectedMeasurements);
+  // }
 
   // remove Measurement
   removeMeasurement() {
