@@ -211,7 +211,7 @@ export class AppComponent {
   selectedMeasurement: any;
   selectedMeasurements = this.measurements;
   selectAll: boolean = false;
-  selectedSubstation: string = 'ТЭЦ ПГУ ГСР Энерго';
+  selectedSubstation: any = this.substations[0].value;
   selectedEquipmentType: string = 'transformator';
   selectedRU: string = 'RU1';
 
@@ -219,6 +219,11 @@ export class AppComponent {
   sortDirection = 'asc';
 
   sortedColumn = '';
+
+  // Selected substations
+  selectSubstation(substation: any) {
+    this.selectedSubstation = substation;
+  }
 
   toggleSort(column: string) {
     if (this.sortedColumn === column) {
